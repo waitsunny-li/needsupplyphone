@@ -13,11 +13,11 @@
   <link rel="stylesheet" href="./css/init.min.css">
   <link rel="stylesheet" href="./css/login.css">
   <link rel="stylesheet" href="./js/tool/layer/need/layer.css">
-  <link rel="stylesheet" href="./js/tool/swiper.min.css">
+
   <script src="./js/tool/flexible.js"></script>
   <script src="./js/tool/jquery.min.js"></script>
   <script src="./js/tool/layer/layer.js"></script>
-  <script src="./js/tool/swiper.min.js"></script>
+
   <title>登录</title>
 </head>
 
@@ -36,35 +36,35 @@
     <!-- 码登录 -->
     <div class="code_login_wrap">
       <div class="code_login">
-        <!-- 头部item -->
-        <div class="login_item_wrap">
-          <div class="login_item vcode_login">
-            短信验证码登录
-          </div>
-          <div class="login_item password_login">
-            账户密码登录
-          </div>
-          <span class="sub_line" style="left: 0;"></span>
-        </div>
-
         <!-- 登录 -->
         <div class="swiper-container login_container">
           <div class="swiper-wrapper login_wrapper">
             <div class="swiper-slide">
               <ul class="vercode_login">
-                <li class="tel_wrap slide_li">
-                  <svg t="1602914162467" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg" p-id="7873" width="25" height="25">
+                <li class="tel_wrap slide_li" style="margin-bottom: 0.5rem;">
+                  <svg t="1602926452189" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="22693" width="30" height="30">
                     <path
-                      d="M534 513.7c114.1-10.8 203.5-107.1 203.5-224.4 0-124.5-100.6-225.4-224.8-225.4S287.9 164.8 287.9 289.3c0 117.3 89.3 213.6 203.5 224.4-310.6 13.6-363.2 325-363.2 445.5h769.1c0-120.5-52.7-431.9-363.3-445.5z"
-                      p-id="7874" fill="#666666">
-                    </path>
+                      d="M705.422222 27.306667H300.373333c-61.44 0-111.502222 50.062222-111.502222 111.502222v735.004444c0 61.44 50.062222 111.502222 111.502222 111.502223H705.422222c61.44 0 111.502222-50.062222 111.502222-111.502223V138.808889c0-61.44-50.062222-111.502222-111.502222-111.502222zM466.488889 63.715556h72.817778c9.102222 0 18.204444 9.102222 18.204444 18.204444s-9.102222 18.204444-18.204444 18.204444h-72.817778c-9.102222 0-18.204444-9.102222-18.204445-18.204444s9.102222-18.204444 18.204445-18.204444z m36.408889 876.088888c-25.031111 0-47.786667-20.48-47.786667-47.786666 0-25.031111 20.48-47.786667 47.786667-47.786667 25.031111 0 47.786667 20.48 47.786666 47.786667 0 27.306667-20.48 47.786667-47.786666 47.786666z m238.933333-152.462222h-477.866667v-20.48h477.866667v20.48z"
+                      fill="#666666" p-id="22694"></path>
                   </svg>
                   <div class="input_wrap">
                     <input type="text" placeholder="输入手机号" name="tel">
                   </div>
                 </li>
-                <li class="ver_code slide_li">
+                <li class="ver_code slide_li" style="margin-bottom: 0.5rem;">
+                  <svg t="1602926492694" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="23552" width="25" height="25">
+                    <path
+                      d="M963.801169 218.170758a72.850542 72.850542 0 0 0-57.513586-63.903984 1357.959666 1357.959666 0 0 1-185.960594-42.815669A690.80207 690.80207 0 0 1 554.17663 14.317049a76.045741 76.045741 0 0 0-88.826539 0 435.825173 435.825173 0 0 1-167.428438 96.495016 624.341926 624.341926 0 0 1-180.848276 44.732789 67.738223 67.738223 0 0 0-56.874546 63.903984S58.281712 379.847839 58.281712 521.075644c0 255.615937 301.626806 502.924356 452.440208 502.924356s406.42934-174.457877 447.32789-499.090117c10.224637-191.711953 3.195199-306.100085 3.195199-306.100085zM799.567929 415.63407l-315.046642 297.153527a42.815669 42.815669 0 0 1-52.401267 5.112318l-8.307518-7.029438L249.993665 530.022202a42.815669 42.815669 0 0 1 63.903984-58.791666L457.042574 621.404899l283.73369-268.396734a42.815669 42.815669 0 1 1 58.791665 63.903984"
+                      p-id="23553" fill="#666666"></path>
+                  </svg>
+                  <div class="input_wrap">
+                    <input type="text" placeholder="输入验证码" name="sms_code">
+                    <div class="send_sms">发送验证码</div>
+                  </div>
+                </li>
+                <li class="password slide_li" style="margin-bottom: 0.5rem;">
                   <svg t="1602914809919" class="icon" viewBox="0 0 1024 1024" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" p-id="17919" width="25" height="25">
                     <path
@@ -73,20 +73,10 @@
                   </svg>
                   <div class="input_wrap">
                     <input type="text" placeholder="输入验证码" name="password">
-                    <div class="send_sms">发送验证码</div>
                   </div>
                 </li>
-                <li class="bottom_title_li">
-                  <a class="login_in" href="register.html">注册</a>
-                </li>
-                <li class="ver_login_btn login_btn">
-                  登录
-                </li>
-              </ul>
-            </div>
-            <div class="swiper-slide">
-              <ul class="vercode_login">
-                <li class="tel_wrap slide_li">
+
+                <li class="username slide_li" style="margin-bottom: 1rem;">
                   <svg t="1602914162467" class="icon" viewBox="0 0 1024 1024" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" p-id="7873" width="25" height="25">
                     <path
@@ -95,51 +85,26 @@
                     </path>
                   </svg>
                   <div class="input_wrap">
-                    <input type="text" placeholder="输入手机号/用户名" name="tel">
+                    <input type="text" placeholder="设置用户名" name="username">
+
                   </div>
                 </li>
-                <li class="ver_code slide_li">
-                  <svg t="1602914809919" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg" p-id="17919" width="25" height="25">
-                    <path
-                      d="M441.344 17.408c-14.848 4.096-44.032 15.36-65.024 25.6-46.592 23.04-86.016 64-111.616 117.248-28.16 57.344-34.304 89.6-34.304 174.08v73.728l-33.28 2.56c-39.936 3.584-65.024 19.968-79.872 52.224-8.704 19.456-9.728 37.376-9.728 249.856 0 149.504 2.048 233.472 5.632 243.2 7.168 19.456 28.672 40.96 53.248 54.272 20.48 11.264 24.064 11.264 325.12 12.8 167.424 1.024 316.416 0 331.264-1.536 35.84-4.608 57.344-19.968 74.752-53.76l14.336-28.16-1.536-230.4c-1.536-227.328-1.536-230.912-12.8-251.904-15.872-28.672-40.448-46.592-74.752-53.248l-29.184-6.144V325.632c0-115.2-18.944-168.96-83.456-233.984-39.936-40.448-73.216-60.416-124.416-73.728-35.84-9.216-107.008-9.216-144.384-0.512z m159.232 68.608c41.472 20.48 83.968 65.024 105.984 110.592 15.36 32.256 15.36 33.28 15.36 120.32V404.48H307.2V330.752c0-88.064 8.704-123.392 43.008-173.056 43.008-63.488 100.352-92.672 175.616-89.6 34.304 1.536 47.104 4.608 74.752 17.92z m-55.296 469.504c8.704 4.608 23.04 14.848 31.232 23.552 19.968 20.992 23.552 69.12 7.168 101.376-6.144 12.288-15.36 23.552-20.992 24.576-8.704 2.56-9.728 7.68-9.728 64.512 0 56.32-1.024 62.976-11.264 73.728-15.872 16.896-46.08 16.384-59.904-1.536-9.728-12.288-10.752-20.48-10.752-73.728 0-57.856-0.512-59.904-13.312-72.192-26.112-24.064-34.816-65.024-20.48-98.304 17.408-41.472 67.584-60.928 108.032-41.984z"
-                      p-id="17920" fill="#666666"></path>
-                  </svg>
-                  <div class="input_wrap">
-                    <input type="text" placeholder="输入密码" name="password">
-                  </div>
-                </li>
-                <li class="bottom_title_li">
-                  <a class="login_in" href="register.html">注册</a>
-                  <a class="fwpd" href="">忘记密码</a>
-                </li>
-                <li class="pwd_login_btn login_btn">
-                  登录
+                <!-- <li class="slide_li"></li> -->
+
+                <li class="ver_login_btn login_btn">
+                  注册
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <!-- 游客登录 -->
-        <div class="tourist_login">
-          游客登录
-        </div>
-
-        <!-- 容易平台规则 -->
-        <div class="agree_rule">
-          <div class="rule">
-            <input type="checkbox" name="isagree" value="1">
-            <a href="">我已阅读并同意《平台免责声明》</a>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 
 
 </body>
-<script src="./js/login.min.js"></script>
 <script>
 
   // 验证码发送
@@ -152,7 +117,7 @@
         content: '发送成功'
         , skin: 'msg'
         , time: 2 //2秒后自动关闭
-        ,style: 'bottom: 50%'
+        , style: 'bottom: 50%'
       });
       timer = setInterval(function () {
         allsec--;
