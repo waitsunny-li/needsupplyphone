@@ -1,0 +1,138 @@
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 75px !important;
+  }
+}
+
+@font-face { 
+  font-family: SIMKAI; /*这里是说明调用来的字体名字*/ 
+  src: url('../css/SIMKAI.TTF'); /*这里是字体文件路径*/ 
+}
+
+body {
+  background-color: #ffffff;
+  font-family: SIMKAI;
+}
+
+$htmlColor: #FFC200;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 1.333333rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.4rem;
+  font-weight: normal;
+  color: #000000;
+  background-color: $htmlColor;
+}
+
+
+.content_wrap {
+  position: absolute;
+  top: 1.6rem;
+
+  // 供应需求
+  .need_supply_wrap {
+    width: 100vw;
+    padding: 0 1.706667rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .need_supply {
+      width: 2.133333rem;
+      height: 2.133333rem;
+      background: url(../images/fabu.png) no-repeat;
+      background-size: 120%;
+      background-position: 50% 50%;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 5px rgba(4, 0, 0, 0.2);
+
+      .supply_icon {
+        width: 0.7rem;
+        height: 0.7rem;
+      }
+
+      .need_icon {
+        width: 0.5rem;
+        height: 0.54rem;
+      }
+
+      .text {
+        margin-left: 0.05667rem;
+        font-size: 0.426667rem;
+        font-weight: normal;
+        color: #000000;
+
+      }
+    }
+  }
+
+  // 广告位
+  .advertisement {
+    margin-top: 0.533333rem;
+    width: 100vw;
+
+    .advertisement_ul {
+      width: 8.933333rem;
+      margin-left: 0.533333rem;
+
+      li {
+        width: 100%;
+        height: 2.4rem;
+        background-color: $htmlColor;
+        border-radius: 10px;
+        margin-bottom: 0.666667rem;
+        overflow: hidden;
+
+        a {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 关闭按钮
+.close {
+  position: fixed;
+  width: 0.8rem;
+  height: 0.8rem;
+  left: 50%;
+  z-index: 1000;
+  bottom: 0.666667rem;
+  transform: translateX(-50%) rotate(45deg);
+
+  .close_inner {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: 0.6rem;
+      height: 0.6rem;
+
+    }
+  }
+}

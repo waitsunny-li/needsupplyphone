@@ -18,6 +18,7 @@
   <script src="./js/tool/jquery.min.js"></script>
   <script src="./js/tool/layer/layer.js"></script>
   <script src="./js/tool/swiper.min.js"></script>
+  <script src="./js/message.min.js"></script>
   <title>登录</title>
 </head>
 
@@ -38,19 +39,19 @@
       <div class="code_login">
         <!-- 头部item -->
         <div class="login_item_wrap">
-          <div class="login_item vcode_login">
+          <!-- <div class="login_item vcode_login">
             短信验证码登录
-          </div>
+          </div> -->
           <div class="login_item password_login">
             账户密码登录
           </div>
-          <span class="sub_line" style="left: 0;"></span>
+          <!-- <span class="sub_line" style="left: 0;"></span> -->
         </div>
 
         <!-- 登录 -->
         <div class="swiper-container login_container">
           <div class="swiper-wrapper login_wrapper">
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <ul class="vercode_login">
                 <li class="tel_wrap slide_li">
                   <svg t="1602914162467" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -83,7 +84,7 @@
                   登录
                 </li>
               </ul>
-            </div>
+            </div> -->
             <div class="swiper-slide">
               <ul class="vercode_login">
                 <li class="tel_wrap slide_li">
@@ -148,12 +149,7 @@
     $('.send_sms').click(function () {
       let allsec = times;
       if (timer) return;
-      layer.open({
-        content: '发送成功'
-        , skin: 'msg'
-        , time: 2 //2秒后自动关闭
-        ,style: 'bottom: 50%'
-      });
+      message.success('发送成功!')
       timer = setInterval(function () {
         allsec--;
         $('.send_sms').text(allsec + 's');
