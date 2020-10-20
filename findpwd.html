@@ -17,13 +17,13 @@
   <script src="./js/tool/flexible.js"></script>
   <script src="./js/tool/jquery.min.js"></script>
   <script src="./js/tool/layer/layer.js"></script>
-  <script src="./js/message.min.js"></script>
+
   <title>登录</title>
 </head>
 
 <body>
   <div class="head_wrap">
-    需求供应平台
+    需求供应平台(找回密码)
   </div>
 
   <div class="login_wrap">
@@ -72,27 +72,14 @@
                       p-id="17920" fill="#666666"></path>
                   </svg>
                   <div class="input_wrap">
-                    <input type="text" placeholder="输入验证码" name="password">
+                    <input type="password" placeholder="输入密码" name="password" >
                   </div>
                 </li>
-
-                <li class="username slide_li" style="margin-bottom: 1rem;">
-                  <svg t="1602914162467" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg" p-id="7873" width="25" height="25">
-                    <path
-                      d="M534 513.7c114.1-10.8 203.5-107.1 203.5-224.4 0-124.5-100.6-225.4-224.8-225.4S287.9 164.8 287.9 289.3c0 117.3 89.3 213.6 203.5 224.4-310.6 13.6-363.2 325-363.2 445.5h769.1c0-120.5-52.7-431.9-363.3-445.5z"
-                      p-id="7874" fill="#666666">
-                    </path>
-                  </svg>
-                  <div class="input_wrap">
-                    <input type="text" placeholder="设置用户名" name="username">
-
-                  </div>
-                </li>
+                
                 <!-- <li class="slide_li"></li> -->
 
-                <li class="ver_login_btn login_btn">
-                  注册
+                <li class="ver_login_btn login_btn" style="margin-top: 1.2rem;">
+                  修改
                 </li>
               </ul>
             </div>
@@ -113,7 +100,12 @@
     $('.send_sms').click(function () {
       let allsec = times;
       if (timer) return;
-      message.success('发送成功！')
+      layer.open({
+        content: '发送成功'
+        , skin: 'msg'
+        , time: 2 //2秒后自动关闭
+        , style: 'bottom: 50%'
+      });
       timer = setInterval(function () {
         allsec--;
         $('.send_sms').text(allsec + 's');

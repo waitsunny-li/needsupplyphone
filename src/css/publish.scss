@@ -1,20 +1,4 @@
-@media screen and (min-width: 750px) {
-  html {
-    font-size: 75px !important;
-  }
-}
-
-@font-face { 
-  font-family: SIMKAI; /*这里是说明调用来的字体名字*/ 
-  src: url('../css/SIMKAI.TTF'); /*这里是字体文件路径*/ 
-}
-
-body {
-  background-color: #ffffff;
-  font-family: SIMKAI;
-}
-
-$htmlColor: #FFC200;
+@import './content.scss';
 
 .header {
   position: fixed;
@@ -25,7 +9,7 @@ $htmlColor: #FFC200;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.4rem;
+  font-size: 0.453333rem;
   font-weight: normal;
   color: #000000;
   background-color: $htmlColor;
@@ -39,15 +23,15 @@ $htmlColor: #FFC200;
   // 供应需求
   .need_supply_wrap {
     width: 100vw;
-    padding: 0 1.706667rem;
+    padding: 0 1.506667rem;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     .need_supply {
-      width: 2.133333rem;
-      height: 2.133333rem;
+      width: 2.4rem;
+      height: 2.4rem;
       background: url(../images/fabu.png) no-repeat;
       background-size: 120%;
       background-position: 50% 50%;
@@ -89,7 +73,7 @@ $htmlColor: #FFC200;
 
       li {
         width: 100%;
-        height: 2.4rem;
+        height: 2rem;
         background-color: $htmlColor;
         border-radius: 10px;
         margin-bottom: 0.666667rem;

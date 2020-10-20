@@ -1,20 +1,5 @@
-@media screen and (min-width: 750px) {
-  html {
-    font-size: 75px !important;
-  }
-}
+@import './content.scss';
 
-@font-face { 
-  font-family: SIMKAI; /*这里是说明调用来的字体名字*/ 
-  src: url('../css/SIMKAI.TTF'); /*这里是字体文件路径*/ 
-}
-
-$htmlColor: #F8CD43;
-
-body {
-  background-color: #ffffff;
-  font-family: SIMKAI;
-}
 
 .head_wrap {
   width: 100vw;
@@ -68,7 +53,7 @@ body {
       @mixin item {
         width: 50%;
         height: 1.133333rem;
-        font-size: 0.32rem;
+        font-size: 0.36rem;
         font-weight: 400;
         color: #333333;
         display: flex;
@@ -170,13 +155,13 @@ body {
               flex-direction: row-reverse;
 
               .login_in {
-                font-size: 0.293333rem;
+                font-size: 0.303333rem;
                 font-weight: normal;
                 color: #333333;
               }
 
               .fwpd {
-                font-size: 0.293333rem;
+                font-size: 0.303333rem;
                 font-weight: normal;
                 color: #333333;
               }
@@ -187,7 +172,7 @@ body {
               margin-top: 0.533333rem;
               width: 72vw;
               height: 1.146667rem;
-              background: #F8CD43;
+              background: $htmlColor;
               border-radius: 42px;
               font-weight: normal;
               color: #000000;

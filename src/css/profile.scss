@@ -1,0 +1,143 @@
+@import './content.scss';
+@import './tar.scss';
+
+.top_content {
+  width: 100vw;
+  height: calc(100vh - 1.386667rem);
+  overflow-y: auto;
+
+  // 顶部栏
+  .head_wrap_top {
+    width: 100vw;
+
+    .bg_img {
+      width: 100vw;
+      height: 5.66667rem;
+      background: url('../images/mineback.png') no-repeat;
+      background-size: cover;
+
+      .mine_header {
+        position: relative;
+        width: 100vw;
+        height: 1.266667rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.453333rem;
+        font-weight: normal;
+        color: #000000;
+      }
+
+      .username_wrap {
+        margin-top: 0.5rem;
+        width: 92vw;
+        margin-left: 4vw;
+        display: flex;
+        align-items: center;
+
+        .area_wrap {
+          width: 1.333333rem;
+          height: 1.333333rem;
+          background-color: #ffffff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+
+          img {
+            width: 1.266667rem;
+            height: 1.266667rem;
+            border-radius: 50%;
+          }
+        }
+
+        .username {
+          margin-left: 0.266667rem;
+
+          .name {
+            font-size: 0.426667rem;
+            font-weight: normal;
+            color: #000000;
+          }
+
+          .id {
+            font-size: 0.293333rem;
+            font-weight: normal;
+            color: #000000;
+          }
+        }
+      }
+    }
+
+    // 功能组
+    .func_arry {
+      margin-top: -1.8rem;
+      width: 92vw;
+      height: 10.8rem;
+      margin-bottom: 1rem;
+      margin-left: 4vw;
+      background-color: #ffffff;
+      background: #FFFFFF;
+      box-shadow: 0px 0px 38px 0px rgba(49, 14, 96, 0.14);
+      border-radius: 30px;
+
+      .func_ul {
+        width: 100%;
+        padding: 0.533333rem 0;
+
+        .func_li {
+          width: 100%;
+          height: 1.2rem;
+          padding: 0 0.413333rem;
+          box-sizing: border-box;
+          border-bottom: 1px solid #C1C2CA;
+
+          a {
+            width: 100%;
+            height: 1.2rem;
+            display: inline-block;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .cir_icon {
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+
+              .cir_wrap {
+                width: 0.766667rem;
+                height: 0.766667rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+
+                svg {
+                  width: 0.45rem;
+                  height: 0.45rem;
+                }
+              }
+
+              .icon_name {
+                margin-left: 0.2rem;
+                font-size: 0.373333rem;
+                font-weight: normal;
+                color: #333333;
+              }
+            }
+
+            .right_content {
+              svg {
+                width: 0.36rem;
+                height: 0.36rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+

@@ -1,22 +1,4 @@
-@media screen and (min-width: 750px) {
-  html {
-    font-size: 75px !important;
-  }
-}
-
-@font-face {
-  font-family: SIMKAI;
-  /*这里是说明调用来的字体名字*/
-  src: url('../css/SIMKAI.TTF');
-  /*这里是字体文件路径*/
-}
-
-body {
-  font-family: SIMKAI;
-  background-color: #FFFFFF;
-}
-
-$htmlColor: #F8CD43;
+@import './content.scss';
 
 .header_wrap {
   position: fixed;
@@ -230,6 +212,51 @@ $htmlColor: #F8CD43;
         }
       }
     }
+
+    .swiper-pagination {
+      width: 1.24rem;
+      height: 0.4rem;
+      left: calc(90vw - 1.333333rem);
+      background: #000000;
+      opacity: 0.8;
+      border-radius: 15px;
+      font-size: 0.32rem;
+      color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
+}
+
+
+.comment_fun {
+  padding: 0.533333rem 0;
+  width: 92vw;
+  margin-left: 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .func_li {
+    width: 46%;
+    height: 0.533333rem;
+    border: 1px solid #333333;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: 0.42rem;
+      height: 0.42rem;
+    }
+
+    .text {
+      font-size: 0.32rem;
+      font-weight: 400;
+      color: #333333;
+    }
+  }
 }
