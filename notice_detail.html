@@ -1,0 +1,113 @@
+<!--
+ * @Author: liweilong
+ * @Date: 2020-10-21 10:44:47
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!-- 通用样式 -->
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/init.min.css">
+  <link rel="stylesheet" href="./css/notice_detail.css">
+  <link rel="stylesheet" href="./js/tool/layer/need/layer.css">
+  <script src="./js/tool/flexible.js"></script>
+  <script src="./js/tool/jquery.min.js"></script>
+  <script src="./js/tool/layer/layer.js"></script>
+  <script src="./js/tool/better-scroll.min.js"></script>
+
+  <title>聊聊</title>
+</head>
+
+<body>
+  <!-- 头部 -->
+  <div class="header_wrap">
+    <div class="left_arrow">
+      <svg t="1603089060003" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        p-id="7510" width="35" height="35">
+        <path
+          d="M554.666667 268.8v601.6h-85.333334V268.8L337.066667 401.066667 277.333333 341.333333 512 106.666667 746.666667 341.333333l-59.733334 59.733334L554.666667 268.8z"
+          fill="#ffffff" p-id="7511"></path>
+      </svg>
+    </div>
+
+    <div class="head_text">千纸鹤~</div>
+  </div>
+
+  <!-- 聊天内容 -->
+  <div class="chat_content_wrap">
+    <ul class="chat_ul">
+      <li class="chat_li">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="./images/touxiang.png" alt="">
+          </div>
+        </div>
+        <div class="chat_content">
+          <div class="chat_inner_content">
+            你好！
+          </div>
+        </div>
+      </li>
+
+      <li class="chat_li_mine">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2156833431,1671740038&fm=26&gp=0.jpg"
+              alt="">
+          </div>
+        </div>
+        <div class="chat_content">
+          <div class="chat_inner_content">
+            你好！
+          </div>
+        </div>
+      </li>
+
+      <li class="chat_li">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="./images/touxiang.png" alt="">
+          </div>
+        </div>
+        <div class="chat_content">
+          <div class="chat_inner_content">
+            请问，你想了解我的需求项目吗？如果想的话，请打我这个电话，我们详细聊，电话：15888888888
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 底部聊天功能框 -->
+  <div class="send_tab">
+    <div class="input_wrap">
+      <input type="text" placeholder="请输入...">
+    </div>
+    <div class="uppic">
+      <svg t="1603251806982" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        p-id="6413" width="35" height="35">
+        <path
+          d="M901.632 454.144h-331.776V122.368c0-14.336-11.264-25.6-25.6-25.6H479.744c-14.336 0-25.6 11.264-25.6 25.6v331.776H122.368c-14.336 0-25.6 11.264-25.6 25.6v65.024c0 14.336 11.264 25.6 25.6 25.6h331.776v331.776c0 14.336 11.264 25.6 25.6 25.6h65.024c14.336 0 25.6-11.264 25.6-25.6v-331.776h331.776c14.336 0 25.6-11.264 25.6-25.6V479.744c-0.512-14.336-11.776-25.6-26.112-25.6z"
+          fill="#333333" p-id="6414"></path>
+      </svg>
+      <input hidden class="file_btn" type="file" name="file">
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  $('.left_arrow').click(function () {
+    window.history.back()
+  })
+
+  // 上传图片
+  $('.uppic').find('.icon').click(function () {
+    $('.file_btn').click();
+  })
+</script>

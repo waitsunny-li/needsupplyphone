@@ -1,0 +1,148 @@
+@import './content.scss';
+@import './tar.scss';
+
+// 头部
+.header_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 1.333333rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $htmlColor;
+  box-shadow: 0 0 5px rgba(4, 0, 0, 0.1);
+
+  .left_arrow {
+    position: absolute;
+    left: 0.4rem;
+    width: 0.866667rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-90deg);
+
+    svg {
+      width: 0.866667rem;
+      height: 0.6rem;
+    }
+  }
+
+  .head_text {
+    font-size: 0.466667rem;
+    color: #ffffff;
+  }
+}
+
+// 暂无消息
+.no_notice {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4.213333rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: 4.293333rem;
+  }
+
+  .no_text {
+    margin-top: 0.266667rem;
+    font-size: 0.50rem;
+    font-weight: 400;
+    color: #666666;
+  }
+}
+
+// 消息内容
+.notice_content {
+  margin-top: 1.333333rem;
+  width: 100vw;
+  height: calc(100vh - 2.72rem);
+  padding-top: 0.266667rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+
+  .notice_wrap {
+    width: 100%;
+
+    .notice_ul {
+      width: 100%;
+
+      .notice_li {
+        width: 100%;
+        height: 1.733333rem;
+        border-bottom: 1px solid #DCDCDC;
+        padding: 0 0.533333rem;
+        box-sizing: border-box;
+
+        a {
+          width: 100%;
+          display: inline-block;
+          height: 1.733333rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .avatar_wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .ava_img {
+              position: relative;
+              width: 1.333333rem;
+              height: 1.333333rem;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+              }
+
+              .dot {
+                position: absolute;
+                right: -0.08rem;
+                z-index: 100;
+                display: inline-block;
+                width: 0.426667rem;
+                height: 0.426667rem;
+                border-radius: 50%;
+                background-color: #E60012;
+                color: #ffffff;
+                text-align: center;
+                line-height: 0.426667rem;
+                font-size: 0.4rem;
+              }
+            }
+
+            .username {
+              margin-left: 0.28rem;
+              font-size: 0.48rem;
+              font-weight: 400;
+              color: #333333;
+            }
+
+          }
+
+          // 日期
+          .date {
+            font-size: 0.32rem;
+            font-weight: 400;
+            color: #999999;
+          }
+        }
+
+      }
+    }
+  }
+}

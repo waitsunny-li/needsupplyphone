@@ -34,229 +34,270 @@
   }
 }
 
-// 头像
-.head_area {
-  margin-top: 1.533333rem;
-  width: 92vw;
-  height: 1.066667rem;
-  margin-left: 4vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  .img_wrap {
-    // width: 3.333333rem;
-    height: 100%;
+
+.detail_content {
+  margin-top: 1.333333rem;
+  width: 100vw;
+  height: calc(100vh - 2.72rem);
+  overflow-y: auto;
+
+  // 头像
+  .head_area {
+    width: 92vw;
+    height: 1.066667rem;
+    margin-left: 4vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.333333rem 0 0.133333rem 0;
 
-    img {
-      width: 1.2rem;
-      height: 1.2rem;
-      border-radius: 50%;
-    }
-
-    .username {
-      margin-left: 0.186667rem;
-      font-size: 0.333333rem;
-      font-weight: 400;
-      color: #9F9F9F;
-    }
-  }
-
-  .func {
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    @mixin icon_wrap {
-      width: 1.5rem;
-      height: 0.466667rem;
+    .img_wrap {
+      // width: 3.333333rem;
+      height: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      background: #FFFFFF;
-      border: 1px solid #BEBEBE;
-      border-radius: 15px;
-    }
 
-    .liao {
-      @include icon_wrap;
-
-      svg {
-        width: 0.5rem;
-        height: 0.5rem;
+      img {
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 50%;
       }
 
-      .icon_text {
-        font-size: 0.28rem;
+      .username {
+        margin-left: 0.186667rem;
+        font-size: 0.333333rem;
         font-weight: 400;
-        color: #000000;
+        color: #9F9F9F;
       }
     }
 
-    .collect {
-      @include icon_wrap;
-      margin-left: 0.106667rem;
+    .func {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-      svg {
-        width: 0.46rem;
-        height: 0.46rem;
+      @mixin icon_wrap {
+        width: 1.5rem;
+        height: 0.466667rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #FFFFFF;
+        border: 1px solid #BEBEBE;
+        border-radius: 15px;
       }
 
-      .icon_text {
-        font-size: 0.28rem;
-        font-weight: 400;
-        color: #000000;
-      }
-    }
-  }
+      .liao {
+        @include icon_wrap;
 
+        svg {
+          width: 0.5rem;
+          height: 0.5rem;
+        }
 
-}
-
-// 描述
-.goods_content {
-  width: 92vw;
-  margin-left: 4vw;
-
-  .title {
-    width: 100%;
-    font-weight: 400;
-    padding: 0.266667rem 0;
-    color: #000000;
-    display: flex;
-    align-items: center;
-    font-size: 0.373333rem;
-  }
-
-  .content_wrap {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    .l_content {
-      width: 45%;
-
-      .l_ul {
-        width: 100%;
-
-        li {
-          font-size: 0.34rem;
+        .icon_text {
+          font-size: 0.28rem;
           font-weight: 400;
-          color: #656565;
-          margin-bottom: 0.146667rem;
+          color: #000000;
+        }
+      }
+
+      .collect {
+        @include icon_wrap;
+        margin-left: 0.106667rem;
+
+        svg {
+          width: 0.46rem;
+          height: 0.46rem;
+        }
+
+        .icon_text {
+          font-size: 0.28rem;
+          font-weight: 400;
+          color: #000000;
         }
       }
     }
+
+
   }
 
+  // 描述
+  .goods_content {
+    width: 92vw;
+    margin-left: 4vw;
 
-  .c_content {
-    width: 100%;
-
-    .supply_title {
+    .title {
       width: 100%;
-      font-size: 0.34rem;
       font-weight: 400;
-      color: #656565;
       padding: 0.266667rem 0;
+      color: #000000;
+      display: flex;
+      align-items: center;
+      font-size: 0.373333rem;
     }
 
-    .supply_con {
-      font-size: 0.34rem;
-      font-weight: 400;
-      color: #656565;
-      line-height: 150%;
-    }
-  }
-
-  // 日期
-  .date_wrap {
-    width: 100%;
-    display: flex;
-    margin-top: 0.266667rem;
-    justify-content: space-between;
-
-    .publish_date {
-      font-size: 0.34rem;
-      font-weight: 400;
-      color: #656565;
-    }
-
-    .end_date {
-      font-size: 0.34rem;
-      font-weight: 400;
-      color: #656565;
-    }
-  }
-
-  // 图片展示
-  .pic_content {
-    width: 100%;
-    margin-top: 0.266667rem;
-
-    .swiper-wrapper {
+    .content_wrap {
       width: 100%;
+      display: flex;
+      justify-content: space-between;
 
-      .swiper-slide {
-        width: 100%;
-        height: 7.426667rem;
+      .l_content {
+        width: 45%;
 
-        img {
+        .l_ul {
           width: 100%;
-          height: 100%;
-          object-fit: cover;
+
+          li {
+            font-size: 0.34rem;
+            font-weight: 400;
+            color: #656565;
+            margin-bottom: 0.146667rem;
+          }
         }
       }
     }
 
-    .swiper-pagination {
-      width: 1.24rem;
-      height: 0.4rem;
-      left: calc(90vw - 1.333333rem);
-      background: #000000;
-      opacity: 0.8;
-      border-radius: 15px;
-      font-size: 0.32rem;
-      color: #FFFFFF;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
+    .c_content {
+      width: 100%;
+
+      .supply_title {
+        width: 100%;
+        font-size: 0.34rem;
+        font-weight: 400;
+        color: #656565;
+        padding: 0.266667rem 0;
+      }
+
+      .supply_con {
+        font-size: 0.34rem;
+        font-weight: 400;
+        color: #656565;
+        line-height: 150%;
+      }
     }
+
+    // 日期
+    .date_wrap {
+      width: 100%;
+      display: flex;
+      margin-top: 0.266667rem;
+      justify-content: space-between;
+
+      .publish_date {
+        font-size: 0.34rem;
+        font-weight: 400;
+        color: #656565;
+      }
+
+      .end_date {
+        font-size: 0.34rem;
+        font-weight: 400;
+        color: #656565;
+      }
+    }
+
+    // 图片展示
+    .pic_content {
+      width: 100%;
+      margin-top: 0.266667rem;
+
+      .swiper-wrapper {
+        width: 100%;
+
+        .swiper-slide {
+          width: 100%;
+          height: 7.426667rem;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .swiper-pagination {
+        width: 1.24rem;
+        height: 0.4rem;
+        left: calc(90vw - 1.333333rem);
+        background: #000000;
+        opacity: 0.8;
+        border-radius: 15px;
+        font-size: 0.32rem;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
   }
 
 }
 
-
-.comment_fun {
-  padding: 0.533333rem 0;
-  width: 92vw;
-  margin-left: 4vw;
+// 底部栏
+.totar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 1.386667rem;
+  box-shadow: 0 0 5px rgba(4, 0, 0, 0.2);
+  background-color: #ffffff;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 0.666667rem;
+  box-sizing: border-box;
 
-  .func_li {
-    width: 46%;
-    height: 0.533333rem;
-    border: 1px solid #333333;
-    border-radius: 20px;
+  // 功能组
+  .func_icon_group {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
-    svg {
-      width: 0.42rem;
-      height: 0.42rem;
-    }
+    .icon_wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-right: 0.693333rem;
 
-    .text {
+      svg {
+        width: 0.533333rem;
+        height: 0.533333rem;
+      }
+
+      .text {
+        margin-top: 0.12rem;
+        font-size: 0.293333rem;
+        font-weight: 400;
+        color: #333333;
+      }
+    }
+  }
+
+  // 
+  .right_content {
+    width: 2.2rem;
+    height: 0.666667rem;
+
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(-90deg, #319595, #62DEDE);
+      border-radius: 23px;
+      text-align: center;
+      line-height: 0.666667rem;
+      color: #ffffff;
       font-size: 0.32rem;
-      font-weight: 400;
-      color: #333333;
     }
   }
 }

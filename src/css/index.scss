@@ -6,8 +6,9 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1000;
   width: 100vw;
-  height: 2.666667rem;
+  height: 1.666667rem;
   background-color: $htmlColor;
 
   // 搜索
@@ -42,117 +43,204 @@
       }
     }
   }
+}
 
-  // 供应需求
-  .need_supply_wrap {
-    margin: 0.32rem 0 0 10vw;
-    width: 80vw;
+// 供应需求
+.need_supply_wrap {
+  position: fixed;
+  top: 1.666667rem;
+  left: 0;
+  z-index: 800;
+  width: 100vw;
+  height: 1.333333rem;
+  padding: 0 1.066667rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $htmlColor;
+
+  .need_supply {
+    width: 3.4rem;
     height: 0.733333rem;
+    background: url(../images/gongxu.png) no-repeat;
+    background-size: 120%;
+    background-position: 50% 50%;
+    border-radius: 12px;
+    overflow: hidden;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    box-shadow: 0 0 5px rgba(4, 0, 0, 0.2);
 
-    .need_supply {
-      width: 42.5%;
-      height: 100%;
-      background: url(../images/gongxu.png) no-repeat;
-      background-size: 120%;
-      background-position: 50% 50%;
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 5px rgba(4, 0, 0, 0.2);
+    .supply_icon {
+      width: 0.533333rem;
+      height: 0.566667rem;
+    }
 
-      .supply_icon {
-        width: 0.533333rem;
-        height: 0.566667rem;
-      }
+    .need_icon {
+      width: 0.4rem;
+      height: 0.44rem;
+    }
 
-      .need_icon {
-        width: 0.4rem;
-        height: 0.44rem;
-      }
-
-      .text {
-        margin-left: 0.066667rem;
-        font-size: 0.373333rem;
-        font-weight: normal;
-        color: #000000;
-      }
+    .text {
+      margin-left: 0.066667rem;
+      font-size: 0.373333rem;
+      font-weight: normal;
+      color: #000000;
     }
   }
 }
 
 // 商品内容
 .goods_contant {
-  margin-top: 2.666667rem;
+  margin-top: 1.666667rem;
   width: 100vw;
-  height: calc(100vh - 4.066667rem);
+  height: calc(100vh - 3.066667rem);
   background-color: #ffffff;
   overflow-y: auto;
 
-  .goods_ul {
+  .goods_wrap {
     width: 100vw;
-    padding: 0.266667rem 0.533333rem;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 
-    .goods_li {
-      width: 4.333333rem;
-      height: 5.333333rem;
-      margin-bottom: 0.266667rem;
+    .blank {
+      width: 100vw;
+      height: 1.333333rem;
+    }
 
-      .img_wrap {
-        width: 100%;
-        height: 4.4rem;
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 0 8px rgba(4, 0, 0, 0.2);
+    .goods_ul_content {
+      width: 100vw;
+      padding: 0.266667rem 0.533333rem;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
 
-        img {
+      .goods_li {
+        width: 4.333333rem;
+        height: 6.433333rem;
+        margin-bottom: 0.266667rem;
+
+        .img_wrap {
           width: 100%;
-          height: 4.4rem;
-          object-fit: cover;
-        }
-      }
+          height: 5.4rem;
+          overflow: hidden;
+          border-radius: 12px;
+          box-shadow: 0 0 8px rgba(4, 0, 0, 0.2);
 
-      .goods_name {
-        width: 100%;
-        font-size: 0.323333rem;
-        font-weight: 400;
-        color: #333333;
-        padding: 0.133333rem 0;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-
-      .date_wrap {
-        width: 100%;
-        display: flex;
-
-        .date {
-          font-size: 0.286667rem;
-          font-weight: 400;
-          color: #666666;
+          img {
+            width: 100%;
+            height: 5.4rem;
+            object-fit: cover;
+          }
         }
 
-        .cate {
-          margin-left: 0.133333rem;
-          width: 0.966667rem;
-          border-radius: 9px;
-          color: #ffffff;
-          font-size: 0.263333rem;
+        .goods_name {
+          width: 100%;
+          font-size: 0.323333rem;
+          font-weight: 600;
+          color: #333333;
+          padding: 0.133333rem 0;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          letter-spacing: 0.013333rem;
+        }
+
+        .date_wrap {
+          width: 100%;
           display: flex;
-          justify-content: center;
-          align-items: center;
+          margin-top: 0.066667rem;
+
+          .date {
+            font-size: 0.286667rem;
+            font-weight: 400;
+            color: #666666;
+          }
+
+          .cate {
+            margin-left: 0.133333rem;
+            width: 0.966667rem;
+            height: 0.333333rem;
+            border-radius: 9px;
+            color: #ffffff;
+            font-size: 0.263333rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
     }
   }
 }
 
+// 登录
+.login_wrap {
+  position: fixed;
+  bottom: 1.386667rem;
+  left: 0;
+  width: 100vw;
+  height: 1.386667rem;
+  background-color: rgba(4, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.4rem;
+  box-sizing: border-box;
+
+  .left_wrap {
+    display: flex;
+    justify-content: space-between;
+
+    .svg {
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #666666;
+
+      svg {
+        width: 0.6rem;
+        height: 0.6rem;
+      }
+    }
+
+    .text {
+      margin-left: 0.266667rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        display: inline-block;
+        color: #ffffff;
+        font-size: 0.293333rem;
+      }
+    }
+  }
+
+  .login_inner {
+    width: 2.666667rem;
+    height: 0.766667rem;
+    background: linear-gradient(-90deg, #ed7450, #eb554d);
+    border-radius: 8px;
+
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      color: #ffffff;
+      text-align: center;      
+      line-height: 0.766667rem;
+    }
+  }
+}
