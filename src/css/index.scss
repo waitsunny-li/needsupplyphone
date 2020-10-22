@@ -59,6 +59,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: $htmlColor;
+  // border-radius: 0 0 100px 100px;
 
   .need_supply {
     width: 3.4rem;
@@ -187,7 +188,7 @@
   width: 100vw;
   height: 1.386667rem;
   background-color: rgba(4, 0, 0, 0.7);
-  z-index: 1000;
+  z-index: 600;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -241,6 +242,7 @@
       color: #ffffff;
       text-align: center;      
       line-height: 0.766667rem;
+      font-size: 0.333333rem;
     }
   }
 }
