@@ -53,5 +53,22 @@ let message = {
       type: 2,
       content: content ? content : ''
     });
+  },
+
+  // prompt
+  prompt(title,content) {
+    return new Promise((resolve, reject) => {
+      layer.open({
+        title: [
+          title,
+          'background-color:#319595; color:#fff;'
+        ],
+        anim: 'up',
+        content: content,
+        btn: ['确认', '取消'],
+        yes: resolve,
+
+      });
+    })
   }
 }

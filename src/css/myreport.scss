@@ -68,6 +68,7 @@
       align-items: center;
       border-bottom: 1px solid #F6F6F6;
       box-shadow: 0 0 5px rgba(4, 0, 0, 0.1);
+      margin-bottom: 0.426667rem;
 
       .top_wrap {
         width: 100%;
@@ -91,6 +92,7 @@
           font-size: 0.32rem;
           font-weight: 400;
           color: #999999;
+          line-height: 140%;
         }
 
         .reported {
@@ -98,6 +100,39 @@
           font-size: 0.32rem;
           font-weight: 400;
           color: #999999;
+          display: flex;
+          justify-content: space-between;
+
+          span {
+            font-size: 0.32rem;
+            font-weight: 400;
+            color: #999999;
+          }
+
+          .state {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            svg {
+              width: 0.4rem;
+              height: 0.4rem;
+            }
+
+            .text {
+              margin-left: 0.066667rem;
+              font-size: 0.32rem;
+              font-weight: 400;
+              color: #999999;
+            }
+
+            .success_text {
+              margin-left: 0.066667rem;
+              font-size: 0.32rem;
+              font-weight: 400;
+              color: #1afa29;
+            }
+          }
         }
       }
     }

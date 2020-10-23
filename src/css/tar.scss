@@ -1,4 +1,5 @@
 @import './content.scss';
+
 // 底部固定栏
 .bottom_bar_wrap {
   position: fixed;
@@ -21,6 +22,7 @@
       height: 1.386667rem;
 
       a {
+        position: relative;
         height: 100%;
         display: inline-block;
         color: #999999;
@@ -28,6 +30,22 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        .dot {
+          position: absolute;
+          top: 0;
+          right: -0.08rem;
+          z-index: 100;
+          display: inline-block;
+          width: 0.406667rem;
+          height: 0.406667rem;
+          border-radius: 50%;
+          background-color: #E60012;
+          color: #ffffff;
+          text-align: center;
+          line-height: 0.426667rem;
+          font-size: 0.4rem;
+        }
 
         svg {
           width: 0.48rem;

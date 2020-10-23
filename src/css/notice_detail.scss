@@ -4,15 +4,14 @@ body {
   background-color: #ECECEC;
 }
 
-// 头部
 .header_wrap {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
   width: 100vw;
   height: 1.333333rem;
   display: flex;
+  z-index: 1000;
   justify-content: center;
   align-items: center;
   background-color: $htmlColor;
@@ -38,6 +37,95 @@ body {
     font-size: 0.466667rem;
     color: #ffffff;
   }
+
+  .more_wrap {
+    position: absolute;
+    right: 0.4rem;
+
+    .svg_wrap {
+      position: relative;
+
+      svg {
+        width: 0.633333rem;
+        height: 0.633333rem;
+      }
+    }
+  }
+
+  .list_wrap {
+    display: none;
+    position: absolute;
+    width: 1.906667rem;
+    right: 0.266667rem;
+    top: 1.166667rem;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(4, 0, 0, 0.1);
+    // border-radius: 10px;
+    padding: 0.133333rem 0;
+
+    .list_ul {
+      width: 100%;
+      position: relative;
+      background-color: #ffffff;
+
+      .list_li {
+        width: 100%;
+        height: 0.666667rem;
+        padding: 0 0.266667rem;
+        box-sizing: border-box;
+        border-bottom: 1px solid #EEEEEE;
+
+        a {
+          position: relative;
+          color: #666666;
+          display: flex;
+          height: 0.666667rem;
+          justify-content: center;
+          align-items: center;
+
+          .dot {
+            position: absolute;
+            top: 0;
+            left: 0.30rem;
+            z-index: 100;
+            display: inline-block;
+            width: 0.306667rem;
+            height: 0.306667rem;
+            border-radius: 50%;
+            background-color: #E60012;
+            color: #ffffff;
+            text-align: center;
+            line-height: 0.306667rem;
+            font-size: 0.32rem;
+          }
+
+          svg {
+            width: 0.386667rem;
+            height: 0.386667rem;
+          }
+
+          .te_t {
+            margin-left: 0.206667rem;
+            font-size: 0.303333rem;
+            font-weight: 400;
+            color: #666666;
+          }
+        }
+      }
+    }
+
+    .list_ul::before {
+      position: absolute;
+      top: -0.546667rem;
+      right: 0.166667rem;
+      content: "";
+      width: 0;
+      height: 0;
+      border: 0.266667rem solid;
+      border-color: transparent transparent #ffffff transparent;
+    }
+  }
 }
 
 // 聊天内容
@@ -51,7 +139,7 @@ body {
 
   .chat_ul {
     width: 100%;
-    padding: 0 0.4rem;
+    padding: 0.266667rem 0.4rem;
     box-sizing: border-box;
 
     @mixin triangle {
@@ -227,14 +315,29 @@ body {
     height: 0.88rem;
     background-color: #ECECEC;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    position: relative;
 
     svg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       width: 0.373333rem;
       height: 0.373333rem;
       font-weight: 600;
     }
+  }
+
+  .submit_btn {
+    display: none;
+    width: 1.6rem;
+    height: 0.88rem;
+    background-color: $htmlColor;
+    color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 0.88rem;
+    font-size: 0.333333rem;
   }
 }

@@ -1,0 +1,88 @@
+<!--
+ * @Author: liweilong
+ * @Date: 2020-10-22 15:30:35
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!-- 通用样式 -->
+  <link rel="stylesheet" href="./css/init.min.css">
+  <link rel="stylesheet" href="./css/commonList.css">
+
+  <script src="./js/tool/flexible.js"></script>
+  <script src="./js/tool/jquery.min.js"></script>
+  <style>
+    .func_arry textarea {
+      font-size: 0.386667rem;
+      font-weight: 400;
+      color: #D7D7D7;
+      width: 100vw;
+      height: 1.333333rem;
+      outline: none;
+      background-color: #ffffff;
+      padding: 0.266667rem 0.533333rem;
+      box-sizing: border-box;
+      border: none;
+    }
+
+    .submit {
+      position: absolute;
+      bottom: 0.666667rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 89.33%;
+      height: 1.066667rem;
+      background: #319595;
+      border-radius: 10px;
+      font-size: 0.4rem;
+      font-weight: 400;
+      color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <title>信息违规</title>
+</head>
+
+<body>
+  <!-- 头部 -->
+  <div class="header_wrap">
+    <div class="left_arrow">
+      <svg t="1603089060003" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        p-id="7510" width="35" height="35">
+        <path
+          d="M554.666667 268.8v601.6h-85.333334V268.8L337.066667 401.066667 277.333333 341.333333 512 106.666667 746.666667 341.333333l-59.733334 59.733334L554.666667 268.8z"
+          fill="#333333" p-id="7511"></path>
+      </svg>
+    </div>
+
+    <div class="head_text">信息违规</div>
+
+    <div class="publish_btn">
+
+    </div>
+
+  </div>
+
+  <div class="func_arry">
+    <textarea name="" id="" placeholder="举报内容简述..."></textarea>
+
+    <div class="submit">
+      确认提交
+    </div>
+  </div>
+
+
+</body>
+
+</html>
+
+<script>
+  $('.left_arrow').click(function () {
+    window.history.back()
+  })
+</script>
