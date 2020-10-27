@@ -124,8 +124,9 @@
           d="M901.632 454.144h-331.776V122.368c0-14.336-11.264-25.6-25.6-25.6H479.744c-14.336 0-25.6 11.264-25.6 25.6v331.776H122.368c-14.336 0-25.6 11.264-25.6 25.6v65.024c0 14.336 11.264 25.6 25.6 25.6h331.776v331.776c0 14.336 11.264 25.6 25.6 25.6h65.024c14.336 0 25.6-11.264 25.6-25.6v-331.776h331.776c14.336 0 25.6-11.264 25.6-25.6V479.744c-0.512-14.336-11.776-25.6-26.112-25.6z"
           fill="#333333" p-id="6414"></path>
       </svg>
-      <input hidden class="file_btn" type="file" name="file">
+      <span class="text">图片</span>
     </div>
+    <input hidden class="file_btn" type="file" name="file">
     <div class="submit_btn">
       发送
     </div>
@@ -145,12 +146,12 @@
   })
 
   // 文字输入
-  $('.text_input').on('input', function() {
+  $('.text_input').on('input', function () {
     let val = $(this).val();
-    if(!val.trim()) {
+    if (!val.trim()) {
       $('.uppic').show()
       $('.submit_btn').hide()
-    }else {
+    } else {
       $('.uppic').hide()
       $('.submit_btn').show()
     }
@@ -161,7 +162,7 @@
   })
 
   // 上传图片
-  $('.uppic').find('.icon').click(function () {
+  $('.uppic').click(function () {
     $('.file_btn').click();
   })
 

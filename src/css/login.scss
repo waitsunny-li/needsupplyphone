@@ -10,7 +10,7 @@
   font-family: Adobe Heiti Std;
   font-weight: normal;
   color: #000000;
-  font-size: 0.4rem;
+  font-size: 0.426667rem;
   background-color: $htmlColor;
 }
 
@@ -128,7 +128,7 @@
                   outline: none;
                   border: none;
                   line-height: 0.6rem;
-                  font-size: 0.293333rem;
+                  font-size: 0.353333rem;
                 }
 
                 .send_sms {
@@ -139,7 +139,7 @@
                   align-items: center;
                   justify-content: center;
                   font-size: 0.266667rem;
-                  
+
                   font-weight: normal;
                   color: #666666;
                   border: 1px solid #666666;
@@ -176,7 +176,7 @@
               border-radius: 42px;
               font-weight: normal;
               color: #000000;
-              font-size: 0.48rem;
+              font-size: 0.52rem;
               display: flex;
               justify-content: center;
               align-items: center;
@@ -194,13 +194,18 @@
       height: 1.146667rem;
       background: #FFFFFF;
       border-radius: 42px;
-      font-size: 0.48rem;
-      font-weight: normal;
-      color: #000000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       box-shadow: 0 0 8px rgba(4, 0, 0, 0.2);
+
+      a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #000000;
+        font-size: 0.48rem;
+        font-weight: normal;
+      }
     }
 
     // 同意规则

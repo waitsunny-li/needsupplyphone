@@ -36,6 +36,19 @@ let message = {
     });
   },
 
+  // 底部提示
+  bconfirm(content, btnArry) {
+    return new Promise((resolve, reject) => {
+      layer.open({
+        content: content,
+        btn: btnArry,
+        skin: 'footer',
+        yes: resolve,
+        no: reject,
+      });
+    })
+  },
+
   // 提示消息
   warning(content) {
     layer.open({
@@ -56,7 +69,7 @@ let message = {
   },
 
   // prompt
-  prompt(title,content) {
+  prompt(title, content) {
     return new Promise((resolve, reject) => {
       layer.open({
         title: [

@@ -23,6 +23,7 @@
   // 供应需求
   .need_supply_wrap {
     width: 100vw;
+    margin-top: 2.33333rem;
     padding: 0 1.506667rem;
     box-sizing: border-box;
     display: flex;
@@ -38,6 +39,7 @@
       border-radius: 50%;
       overflow: hidden;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       box-shadow: 0 0 5px rgba(4, 0, 0, 0.2);
@@ -52,9 +54,15 @@
         height: 0.54rem;
       }
 
+      img {
+        width: 0.45rem;
+        height: 0.40rem;
+        margin-bottom: 0.05rem;
+      }
+
       .text {
-        margin-left: 0.05667rem;
-        font-size: 0.426667rem;
+        // margin-left: 0.05667rem;
+        font-size: 0.4rem;
         font-weight: normal;
         color: #000000;
 
@@ -64,7 +72,7 @@
 
   // 广告位
   .advertisement {
-    margin-top: 0.533333rem;
+    margin-top: 0.333333rem;
     width: 100vw;
 
     .advertisement_ul {
@@ -73,20 +81,23 @@
 
       li {
         width: 100%;
-        height: 2rem;
-        background-color: $htmlColor;
-        border-radius: 10px;
-        margin-bottom: 0.666667rem;
+        height: 1.7rem;
+        margin-bottom: 0.266667rem;
         overflow: hidden;
+        display: flex;
+        justify-content: space-between;
 
         a {
           display: inline-block;
           width: 100%;
           height: 100%;
+          border-radius: 10px;
+          background-color: #4fb6f1;
 
           img {
             width: 100%;
             height: 100%;
+            border-radius: 10px;
             object-fit: cover;
           }
         }

@@ -37,7 +37,7 @@
 
     <div class="head_text">商品详情</div>
 
-    <div class="more_wrap">
+    <!-- <div class="more_wrap">
       <div class="svg_wrap">
         <svg t="1603420514319" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
           p-id="4037" width="35" height="35">
@@ -47,9 +47,9 @@
         </svg>
       </div>
 
-    </div>
+    </div> -->
 
-    <div class="list_wrap">
+    <!-- <div class="list_wrap">
       <ul class="list_ul">
         <li class="list_li">
           <a href="">
@@ -95,7 +95,6 @@
           </a>
         </li>
 
-        <!-- 举报 -->
         <li class="list_li">
           <a href="reportlist.html">
             <svg t="1603422489130" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +109,6 @@
           </a>
         </li>
 
-        <!-- 分享 -->
         <li class="list_li" style="border: none;">
           <a href="">
             <svg t="1603422572832" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -128,19 +126,30 @@
           </a>
         </li>
       </ul>
-    </div>
+    </div> -->
   </div>
 
+  <!-- 商品详情 -->
   <div class="detail_content wrapper">
     <div class="detail_wrap content">
       <div class="head_area">
         <div class="img_wrap">
           <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2156833431,1671740038&fm=26&gp=0.jpg"
             alt="">
-          <span class="username">就叫小鱼儿</span>
+          <div class="date_name">
+            <span class="username">就叫小鱼儿</span>
+            <p class="date_city">
+              <span class="time">5小时前</span>
+              <span class="city">合肥市瑶海区</span>
+            </p>
+          </div>
         </div>
         <div class="func">
-
+          <!-- 需求  -->
+          <!-- <span class="cate" style="
+            background: #95ec69;">需求</span> -->
+          <!-- 供应 -->
+          <span class="cate" style="background: #dc3173;">供应</span>
         </div>
       </div>
 
@@ -218,13 +227,96 @@
           <div class="swiper-pagination"></div>
         </div>
       </div>
+
+      <!-- 间隔线 -->
+      <div class="line_wrap"></div>
+
+      <!-- 评论区 -->
+      <div class="comment_wrap">
+        <div class="head_title">全部评论 · 65</div>
+        <div class="first_comment_content">
+          <ul class="first_comment_ul">
+            <li class="first_comment_li">
+              <div class="con">
+                <div class="ava_wrap">
+                  <img src="./images/touxiang.png" alt="">
+                </div>
+                <div class="comment_content_first">
+                  <p class="name">没头脑</p>
+                  <p class="content">联系时请说是在谢绝推销网www.xie-jue-tuixiao.com看到我的，谢谢</p>
+                </div>
+              </div>
+
+              <!-- 二级评论 -->
+              <div class="second_comment">
+                <ul class="second_comment_ul">
+                  <li class="second_comment_li">
+                    <div class="con">
+                      <div class="ava_wrap">
+                        <img src="./images/touxiang1.jpeg" alt="">
+                      </div>
+                      <div class="comment_content_first">
+                        <p class="name">就叫小鱼鱼</p>
+                        <p class="content">联系时请说是在谢绝推销网www.xie-jue-tuixiao.com看到我的，谢谢</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="first_comment_li">
+              <div class="con">
+                <div class="ava_wrap">
+                  <img src="./images/touxiang.png" alt="">
+                </div>
+                <div class="comment_content_first">
+                  <p class="name">史迪仔</p>
+                  <p class="content">联系时请说是在谢绝推销网www.xie-jue-tuixiao.com看到我的，谢谢</p>
+                </div>
+              </div>
+            </li>
+            <li class="first_comment_li">
+              <div class="con">
+                <div class="ava_wrap">
+                  <img src="./images/touxiang.png" alt="">
+                </div>
+                <div class="comment_content_first">
+                  <p class="name">不高兴</p>
+                  <p class="content">联系时请说是在谢绝推销网www.xie-jue-tuixiao.com看到我的，谢谢</p>
+                </div>
+              </div>
+            </li>
+            <li class="first_comment_li">
+              <div class="con">
+                <div class="ava_wrap">
+                  <img src="./images/touxiang.png" alt="">
+                </div>
+                <div class="comment_content_first">
+                  <p class="name">就叫小鱼鱼</p>
+                  <p class="content">联系时请说是在谢绝推销网www.xie-jue-tuixiao.com看到我的，谢谢</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部聊天框 -->
+  <div class="send_tab">
+    <div class="input_wrap">
+      <input type="text" placeholder="请输入评论内容.." class="text_input">
+    </div>
+    <div class="submit_btn">
+      发送
     </div>
   </div>
 
   <!-- 底部栏 -->
   <div class="totar">
     <div class="func_icon_group">
-      <a href="" class="icon_wrap">
+      <a href="javascript:void(0)" class="icon_wrap leave_message">
         <svg t="1603269779463" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
           p-id="7407" width="35" height="35">
           <path
@@ -259,11 +351,23 @@
         </svg>
         <span class="text">举报</span>
       </a>
+      <a href="reportlist.html" class="icon_wrap">
+        <svg t="1603422572832" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          p-id="6631" width="35" height="35">
+          <path
+            d="M952.32 496.128c-11.264 0-20.48 9.216-20.48 20.48v342.016c0 39.936-32.768 72.704-72.704 72.704H164.864c-39.936 0-72.704-32.768-72.704-72.704V307.2c0-39.936 32.768-72.704 72.704-72.704H558.08c11.264 0 20.48-9.216 20.48-20.48s-9.216-20.48-20.48-20.48H164.864C102.4 193.024 51.2 244.224 51.2 307.2v551.936C51.2 921.6 102.4 972.8 164.864 972.8h693.76c62.976 0 113.664-51.2 113.664-113.664V517.12c0.512-11.776-8.704-20.992-19.968-20.992z"
+            fill="#666666" p-id="6632"></path>
+          <path
+            d="M958.464 145.408l-286.72-93.184c-10.752-3.584-22.528 2.56-26.112 13.312-3.584 10.752 2.56 22.528 13.312 26.112l234.496 76.288c-51.2 19.968-100.352 45.568-145.92 77.312-60.416 41.472-113.152 92.672-157.696 150.528-92.16 121.344-140.8 266.24-140.8 418.816 0 11.264 9.216 20.48 20.48 20.48s20.48-9.216 20.48-20.48c0-273.408 174.08-519.68 428.544-612.352L839.68 445.44c-3.584 10.752 2.56 22.528 13.312 26.112 2.048 0.512 4.096 1.024 6.144 1.024 8.704 0 16.896-5.632 19.456-14.336l89.6-275.968c3.072-4.096 5.12-9.216 4.608-14.848 1.024-9.728-4.608-18.944-14.336-22.016z"
+            fill="#666666" p-id="6633"></path>
+        </svg>
+        <span class="text">分享</span>
+      </a>
     </div>
 
     <!-- 文字 -->
     <div class="right_content">
-      <a href="">我想要</a>
+      <a href="notice_detail.html">我想要</a>
     </div>
   </div>
 </body>
@@ -293,20 +397,43 @@
   })
 
 
-  let isShow = false;
-  $('.more_wrap').click(function () {
-    if (isShow) {
-      $('.list_wrap').hide()
-      $('.detail_content').css({
-        'z-index': '1'
-      })
-      isShow = false
-    } else {
-      $('.list_wrap').show()
-      $('.detail_content').css({
-        'z-index': '-1'
-      })
-      isShow = true
-    }
+  // let isShow = false;
+  // $('.more_wrap').click(function () {
+  //   if (isShow) {
+  //     $('.list_wrap').hide()
+  //     $('.detail_content').css({
+  //       'z-index': '1'
+  //     })
+  //     isShow = false
+  //   } else {
+  //     $('.list_wrap').show()
+  //     $('.detail_content').css({
+  //       'z-index': '-1'
+  //     })
+  //     isShow = true
+  //   }
+  // })
+
+  // 监听留言点击
+  function listenMessage() {
+    $('.send_tab').show()
+    $('.text_input').focus();
+    $('.text_input').blur(function () {
+      $('.send_tab').hide()
+    })
+  }
+  $('.leave_message').click(function () {
+    $('.text_input').attr('placeholder', '请输入评论内容...')
+    listenMessage();
+  })
+
+  // 监听回复点击
+  $('.first_comment_li').click(function () {
+    let reply_name = $(this).find('.name').eq(0).text();
+    let input_placeholder = `回复${reply_name}`;
+    $('.text_input').attr('placeholder', input_placeholder)
+
+    listenMessage();
+
   })
 </script>

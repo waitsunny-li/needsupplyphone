@@ -51,7 +51,7 @@
 
           <div class="func_wrap">
             <a href="">编辑</a>
-            <a href="javascript:void">删除</a>
+            <a class="delete_btn" href="javascript:void(0)" data-id="1">删除</a>
           </div>
         </div>
       </li>
@@ -67,7 +67,7 @@
 
           <div class="func_wrap">
             <a href="">编辑</a>
-            <a href="javascript:void">删除</a>
+            <a class="delete_btn" href="javascript:void(0)" data-id="2">删除</a>
           </div>
         </div>
       </li>
@@ -83,7 +83,7 @@
 
           <div class="func_wrap">
             <a href="">编辑</a>
-            <a href="javascript:void">删除</a>
+            <a class="delete_btn" href="javascript:void(0)" data-id="3">删除</a>
           </div>
         </div>
       </li>
@@ -99,7 +99,7 @@
 
           <div class="func_wrap">
             <a href="">编辑</a>
-            <a href="javascript:void">删除</a>
+            <a class="delete_btn" href="javascript:void(0)" data-id="4">删除</a>
           </div>
         </div>
       </li>
@@ -115,7 +115,7 @@
 
           <div class="func_wrap">
             <a href="">编辑</a>
-            <a href="javascript:void">删除</a>
+            <a class="delete_btn" href="javascript:void(0)" data-id="5">删除</a>
           </div>
         </div>
       </li>
@@ -131,7 +131,7 @@
 
           <div class="func_wrap">
             <a href="">编辑</a>
-            <a href="javascript:void">删除</a>
+            <a class="delete_btn" href="javascript:void(0)" data-id="6">删除</a>
           </div>
         </div>
       </li>
@@ -147,7 +147,7 @@
 
           <div class="func_wrap">
             <a href="">编辑</a>
-            <a href="javascript:void">删除</a>
+            <a class="delete_btn" href="javascript:void(0)" data-id="7">删除</a>
           </div>
         </div>
       </li>
@@ -163,7 +163,7 @@
 
           <div class="func_wrap">
             <a href="">编辑</a>
-            <a href="javascript:void">删除</a>
+            <a class="delete_btn" href="javascript:void(0)" data-id="8">删除</a>
           </div>
         </div>
       </li>
@@ -179,7 +179,7 @@
 
           <div class="func_wrap">
             <a href="">编辑</a>
-            <a href="javascript:void">删除</a>
+            <a class="delete_btn" href="javascript:void(0)" data-id="9">删除</a>
           </div>
         </div>
       </li>
@@ -195,7 +195,7 @@
 
           <div class="func_wrap">
             <a href="">编辑</a>
-            <a href="javascript:void">删除</a>
+            <a class="delete_btn" href="javascript:void(0)">删除</a>
           </div>
         </div>
       </li>
@@ -259,5 +259,15 @@
 
   $('.left_arrow').click(function() {
     window.history.back()
+  })
+
+  // 删除提示
+  $('.delete_btn').click(function() {
+    let id = $(this).attr('data-id');
+    message.bconfirm('您确定要删除这个发布吗？', ['删除', '取消']).then(res => {
+      console.log('您点击了删除！');
+    }).catch(error => {
+      console.log('您点击了取消！');
+    })
   })
 </script>

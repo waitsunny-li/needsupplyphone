@@ -238,6 +238,7 @@ body {
           content: "";
           right: -0.133333rem;
           @include triangle;
+          border-color: #95ec69 transparent transparent transparent;
         }
 
         .chat_inner_content {
@@ -246,7 +247,7 @@ body {
           font-size: 0.493333rem;
           font-weight: 400;
           color: #333333;
-          background-color: #ffffff;
+          background-color: #95ec69;
           padding: 0.266667rem 0.4rem;
           display: flex;
           align-items: center;
@@ -310,19 +311,17 @@ body {
   }
 
   .uppic {
-    margin-right: 0.186667rem;
-    width: 0.88rem;
+    width: 1.6rem;
     height: 0.88rem;
     background-color: #ECECEC;
-    border-radius: 50%;
+    border-radius: 10px;
     text-align: center;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     svg {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
       width: 0.373333rem;
       height: 0.373333rem;
       font-weight: 600;
