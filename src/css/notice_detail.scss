@@ -45,9 +45,25 @@ body {
     .svg_wrap {
       position: relative;
 
-      svg {
-        width: 0.633333rem;
-        height: 0.633333rem;
+      a {
+        position: relative;
+        color: #666666;
+        display: flex;
+        height: 0.666667rem;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          width: 0.386667rem;
+          height: 0.386667rem;
+        }
+
+        .te_t {
+          margin-left: 0.206667rem;
+          font-size: 0.303333rem;
+          font-weight: 400;
+          color: #ffffff;
+        }
       }
     }
   }
@@ -93,7 +109,7 @@ body {
             width: 0.306667rem;
             height: 0.306667rem;
             border-radius: 50%;
-            background-color: #E60012;
+            background-color: #dc3173;
             color: #ffffff;
             text-align: center;
             line-height: 0.306667rem;

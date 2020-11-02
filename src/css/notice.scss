@@ -117,7 +117,7 @@
                 width: 0.426667rem;
                 height: 0.426667rem;
                 border-radius: 50%;
-                background-color: #E60012;
+                background-color: #dc3173;
                 color: #ffffff;
                 text-align: center;
                 line-height: 0.426667rem;
@@ -125,14 +125,47 @@
               }
             }
 
-            .username {
+            .n_con {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
               margin-left: 0.28rem;
-              font-size: 0.48rem;
-              font-weight: 400;
-              color: #333333;
+
+              .username {
+                font-size: 0.48rem;
+                font-weight: 400;
+                color: #333333;
+              }
+              .notice_desc {
+                width: 2.666667rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                margin-top: 0.15rem;
+                color: #999999;
+                font-size: 0.266667rem;
+              }
+            }
+
+            .current_title {
+              margin-left: .133333rem;
+              border-radius: 9px;
+              padding: 0 0.133333rem;
+              box-sizing: border-box;
+              max-width: 2.966667rem;
+              height: 0.506667rem;
+              line-height: 0.506667rem;
+              color: #fff;
+              font-size: 0.373333rem;
+              text-align: center;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
             }
 
           }
+
+          
 
           // 日期
           .date {
