@@ -18,6 +18,30 @@
   <script src="./js/tool/layer/layer.js"></script>
   <script src="./js/tool/better-scroll.min.js"></script>
   <script src="./js/message.min.js"></script>
+  <script src="./js/tool/funlazy.min.js"></script>
+  <script src="./js/tool/art-template.js"></script>
+
+  <script id="tpl_data" type="text/html">
+    {{ each goodsLists }}
+    <li class="goods_li">
+      <a href="goods_detail.html">
+        <div class="img_wrap">
+          <img data-funlazy="{{ $value.imageUrl }}" alt="">
+        </div>
+        <p class="goods_name">{{ $value.title }}</p>
+        <div class="date_wrap">
+          <p class="date">发布日期：{{ $value.pub_date }}</p>
+          {{ if $value.cate === '供应' }}
+          <span class="cate" style="background: #dc3173;">供应</span>
+          {{ else }}
+          <span class="cate" style="
+            background: #1a8eff;">需求</span>
+          {{ /if }}
+        </div>
+      </a>
+    </li>
+    {{ /each }}
+  </script>
 
   <title>首页</title>
 </head>
@@ -74,7 +98,7 @@
         <li class="goods_li">
           <a href="goods_detail.html">
             <div class="img_wrap">
-              <img src="./images/goods1.png" alt="">
+              <img data-funlazy="./images/goods1.png" alt="">
             </div>
             <p class="goods_name">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
             <div class="date_wrap">
@@ -86,7 +110,7 @@
         <li class="goods_li">
           <a href="goods_detail.html">
             <div class="img_wrap">
-              <img src="./images/goods2.png" alt="">
+              <img data-funlazy="./images/goods2.png" alt="">
             </div>
             <p class="goods_name">大量可团购小样产品，雅诗兰黛...</p>
             <div class="date_wrap">
@@ -99,7 +123,7 @@
         <li class="goods_li">
           <a href="goods_detail.html">
             <div class="img_wrap">
-              <img src="./images/goods3.png" alt="">
+              <img data-funlazy="./images/goods3.png" alt="">
             </div>
             <p class="goods_name">澳洲莱茵玫瑰水保湿唇彩10ml</p>
             <div class="date_wrap">
@@ -111,7 +135,7 @@
         <li class="goods_li">
           <a href="goods_detail.html">
             <div class="img_wrap">
-              <img src="./images/goods4.png" alt="">
+              <img data-funlazy="./images/goods4.png" alt="">
             </div>
             <p class="goods_name">尚派高档精品鳄鱼皮花纹女士钱包D119</p>
             <div class="date_wrap">
@@ -124,7 +148,7 @@
         <li class="goods_li">
           <a href="goods_detail.html">
             <div class="img_wrap">
-              <img src="./images/goods1.png" alt="">
+              <img data-funlazy="./images/goods1.png" alt="">
             </div>
             <p class="goods_name">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
             <div class="date_wrap">
@@ -136,7 +160,7 @@
         <li class="goods_li">
           <a href="goods_detail.html">
             <div class="img_wrap">
-              <img src="./images/goods2.png" alt="">
+              <img data-funlazy="./images/goods2.png" alt="">
             </div>
             <p class="goods_name">大量可团购小样产品，雅诗兰黛...</p>
             <div class="date_wrap">
@@ -149,7 +173,7 @@
         <li class="goods_li">
           <a href="goods_detail.html">
             <div class="img_wrap">
-              <img src="./images/goods3.png" alt="">
+              <img data-funlazy="./images/goods3.png" alt="">
             </div>
             <p class="goods_name">澳洲莱茵玫瑰水保湿唇彩10ml</p>
             <div class="date_wrap">
@@ -161,7 +185,7 @@
         <li class="goods_li">
           <a href="">
             <div class="img_wrap">
-              <img src="./images/goods4.png" alt="">
+              <img data-funlazy="./images/goods4.png" alt="">
             </div>
             <p class="goods_name">尚派高档精品鳄鱼皮花纹女士钱包D119</p>
             <div class="date_wrap">
@@ -174,7 +198,7 @@
         <li class="goods_li">
           <a href="">
             <div class="img_wrap">
-              <img src="./images/goods1.png" alt="">
+              <img data-funlazy="./images/goods1.png" alt="">
             </div>
             <p class="goods_name">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
             <div class="date_wrap">
@@ -186,7 +210,7 @@
         <li class="goods_li">
           <a href="">
             <div class="img_wrap">
-              <img src="./images/goods2.png" alt="">
+              <img data-funlazy="./images/goods2.png" alt="">
             </div>
             <p class="goods_name">大量可团购小样产品，雅诗兰黛...</p>
             <div class="date_wrap">
@@ -199,7 +223,7 @@
         <li class="goods_li">
           <a href="">
             <div class="img_wrap">
-              <img src="./images/goods3.png" alt="">
+              <img data-funlazy="./images/goods3.png" alt="">
             </div>
             <p class="goods_name">澳洲莱茵玫瑰水保湿唇彩10ml</p>
             <div class="date_wrap">
@@ -210,7 +234,7 @@
         </li>
         <li class="goods_li">
           <div class="img_wrap">
-            <img src="./images/goods4.png" alt="">
+            <img data-funlazy="./images/goods4.png" alt="">
           </div>
           <p class="goods_name">尚派高档精品鳄鱼皮花纹女士钱包D119</p>
           <div class="date_wrap">
@@ -221,7 +245,7 @@
         </li>
         <li class="goods_li">
           <div class="img_wrap">
-            <img src="./images/goods1.png" alt="">
+            <img data-funlazy="./images/goods1.png" alt="">
           </div>
           <p class="goods_name">安费诺安全插座插线板750度高温打发顺丰打发顺丰...</p>
           <div class="date_wrap">
@@ -231,7 +255,7 @@
         </li>
         <li class="goods_li">
           <div class="img_wrap">
-            <img src="./images/goods2.png" alt="">
+            <img data-funlazy="./images/goods2.png" alt="">
           </div>
           <p class="goods_name">大量可团购小样产品，雅诗兰黛...</p>
           <div class="date_wrap">
@@ -242,7 +266,7 @@
         </li>
         <li class="goods_li">
           <div class="img_wrap">
-            <img src="./images/goods3.png" alt="">
+            <img data-funlazy="./images/goods3.png" alt="">
           </div>
           <p class="goods_name">澳洲莱茵玫瑰水保湿唇彩10ml</p>
           <div class="date_wrap">
@@ -252,7 +276,7 @@
         </li>
         <li class="goods_li">
           <div class="img_wrap">
-            <img src="./images/goods4.png" alt="">
+            <img data-funlazy="./images/goods4.png" alt="">
           </div>
           <p class="goods_name">尚派高档精品鳄鱼皮花纹女士钱包D119</p>
           <div class="date_wrap">
@@ -390,11 +414,11 @@
     probeType: 3,
     pullUpLoad: true,
     click: true,
+
   })
 
   // 监听滚动区域
   bs.on('scroll', function (position) {
-    console.log(-position.y);
     if (-position.y > 0) {
       let newTop = 1.666667 - (-position.y / 75) + 'rem'
       $('.need_supply_wrap').css({
@@ -417,13 +441,40 @@
   bs.on('pullingUp', function () {
     let index = message.loading('拼命加载中')
     setTimeout(function () {
+      // 模板
+      let tplHtml = template('tpl_data', {
+        goodsLists: [{},{},{},{},{},{},{},{},{},{}]
+      })
+      // 向ul添加HTML字符串
+      $('.goods_ul_content').append(tplHtml)
+      // 结束上拉加载，准备下次
       bs.finishPullUp()
+      // 重新计算 BetterScroll
+      bs.refresh()
+      // 关闭加载中。。。窗口
       layer.close(index)
     }, 3000)
+    // 发送请求
+
   })
 
   // 回到顶部按钮
   $('.back_top').click(function () {
     bs.scrollTo(0, 0, 500)
+  })
+
+  
+
+  // 图片懒加载
+  // $.FunLazy({
+  //   onSuccess: function (el, img) {
+  //     console.log("图片：" + img + "已加载");
+  //   }
+  // });
+  FunLazy({
+    onSuccess: function (el, img) {
+      console.log("图片：" + img + "已加载");
+      bs.refresh()
+    }
   })
 </script>

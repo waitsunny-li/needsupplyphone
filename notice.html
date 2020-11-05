@@ -18,6 +18,36 @@
   <script src="./js/tool/layer/layer.js"></script>
   <script src="./js/tool/better-scroll.min.js"></script>
   <script src="./js/message.min.js"></script>
+  <script src="./js/tool/art-template.js"></script>
+
+  <script id="tpl_data" type="text/html">
+    {{ each noticeLists }}
+    <li class="notice_li">
+      <a href="notice_detail.html">
+        <div class="avatar_wrap">
+          <div class="ava_img">
+            <img src="./images/touxiang.png" alt="">
+            <span class="dot">3</span>
+          </div>
+          <div class="n_con">
+            <p class="username">千纸鹤~</p>
+            <p class="notice_desc">
+              你的未来不是梦,你的未来不是梦,你的未来不是梦，你的未来不是梦
+            </p>
+          </div>
+          <div class="current_title" style="background: #1a8eff;text-overflow: ellipsis;
+          white-space: nowrap;">
+            人民币,美元等
+          </div>
+        </div>
+        <!-- 时间 -->
+        <div class="date">
+          09:17
+        </div>
+      </a>
+    </li>
+    {{ /each }}
+  </script>
   <title>消息</title>
 </head>
 
@@ -35,10 +65,25 @@
 
     <div class="head_text">消息</div>
   </div>
+  <!-- 搜索 -->
+  <div class="need_supply_wrap">
+    <div class="search_wrap">
+      <input type="text" name="name" placeholder="搜索">
+      <button type="submit" class="search_btn">
+        <svg t="1602987574996" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          p-id="6984" width="30" height="30">
+          <path
+            d="M894.3872 819.013632 655.1552 576.60928c52.4288-55.12704 72.761344-122.871808 72.761344-205.053952 0-169.146368-130.610176-305.958912-298.596352-305.958912-167.962624 0-304.633856 137.617408-304.633856 306.763776 0 169.147392 134.541312 299.305984 302.50496 299.305984 70.132736 0 136.737792-16.780288 188.269568-57.020416l240.959488 244.130816c4.405248 4.451328 10.180608 6.677504 15.954944 6.677504 5.776384 0 15.337472-6.816768 19.739648-11.266048C900.921344 845.33248 903.1936 827.913216 894.3872 819.013632zM172.831744 368.572416c0-140.362752 113.378304-254.498816 252.724224-254.498816 139.368448 0 252.7488 114.136064 252.7488 254.498816 0 140.316672-113.381376 254.49984-252.7488 254.49984C286.210048 623.072256 172.831744 508.889088 172.831744 368.572416z"
+            p-id="6985" fill="#999999"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
 
   <!-- 消息内容 -->
   <div class="notice_content wrapper">
     <div class="notice_wrap content">
+      <div class="blank"></div>
       <ul class="notice_ul">
         <li class="notice_li">
           <a href="notice_detail.html">
@@ -58,7 +103,7 @@
                 人民币,美元等
               </div>
             </div>
-           
+
 
             <!-- 时间 -->
             <div class="date">
@@ -84,7 +129,7 @@
                 人民币,美元等
               </div>
             </div>
-           
+
 
             <!-- 时间 -->
             <div class="date">
@@ -110,7 +155,7 @@
                 人民币,美元等
               </div>
             </div>
-           
+
 
             <!-- 时间 -->
             <div class="date">
@@ -135,7 +180,7 @@
                 人民币,美元等
               </div>
             </div>
-           
+
 
             <!-- 时间 -->
             <div class="date">
@@ -159,7 +204,7 @@
                 人民币,美元等
               </div>
             </div>
-           
+
 
             <!-- 时间 -->
             <div class="date">
@@ -183,7 +228,7 @@
                 人民币,美元等
               </div>
             </div>
-           
+
 
             <!-- 时间 -->
             <div class="date">
@@ -207,7 +252,7 @@
                 人民币,美元等
               </div>
             </div>
-           
+
 
             <!-- 时间 -->
             <div class="date">
@@ -231,7 +276,7 @@
                 人民币,美元等
               </div>
             </div>
-           
+
 
             <!-- 时间 -->
             <div class="date">
@@ -255,7 +300,7 @@
                 人民币,美元等
               </div>
             </div>
-           
+
 
             <!-- 时间 -->
             <div class="date">
@@ -279,7 +324,7 @@
                 人民币,美元等
               </div>
             </div>
-           
+
 
             <!-- 时间 -->
             <div class="date">
@@ -303,7 +348,7 @@
                 人民币,美元等
               </div>
             </div>
-           
+
 
             <!-- 时间 -->
             <div class="date">
@@ -327,7 +372,7 @@
                 人民币,美元等
               </div>
             </div>
-           
+
 
             <!-- 时间 -->
             <div class="date">
@@ -476,6 +521,12 @@
 
   // 监听滚动区域
   bs.on('scroll', function (position) {
+    if (-position.y > 0) {
+      let newTop = 1.333333 - (-position.y / 75) + 'rem'
+      $('.need_supply_wrap').css({
+        "top": newTop
+      });
+    }
     if (-position.y > 400) {
       $('.back_top').css({
         'display': 'block'
@@ -491,7 +542,17 @@
   bs.on('pullingUp', function () {
     let index = message.loading('拼命加载中')
     setTimeout(function () {
+      // 模板
+      let tplHtml = template('tpl_data', {
+        noticeLists: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
+      })
+      // 向ul添加HTML字符串
+      $('.notice_ul').append(tplHtml)
+      // 结束上拉加载，准备下次
       bs.finishPullUp()
+      // 重新计算 BetterScroll
+      bs.refresh()
+      // 关闭加载中。。。窗口
       layer.close(index)
     }, 3000)
   })

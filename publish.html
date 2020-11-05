@@ -12,8 +12,10 @@
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/init.min.css">
   <link rel="stylesheet" href="./css/publish.css">
+  <link rel="stylesheet" href="./js/tool/swiper.min.css">
   <script src="./js/tool/flexible.js"></script>
   <script src="./js/tool/jquery.min.js"></script>
+  <script src="./js/tool//swiper.min.js"></script>
   <title>发布</title>
 </head>
 
@@ -27,10 +29,18 @@
     <!-- 广告位 -->
     <div class="advertisement">
       <ul class="advertisement_ul">
-        <li>
-          <a href="">
-            <img src="" alt="">
-          </a>
+        <li class="swiper-container">
+          <div class="swiper-wrapper">
+            <a class="swiper-slide">
+              <img src="https://gw.alicdn.com/imgextra/i3/63/O1CN01kx5tYx1CKtaHkmXo2_!!63-0-lubanu.jpg" alt="">
+            </a>
+            <a class="swiper-slide">
+              <img src="https://aecpm.alicdn.com/simba/img/TB1CWf9KpXXXXbuXpXXSutbFXXX.jpg_q50.jpg" alt="">
+            </a>
+            <a class="swiper-slide">
+              <img src="https://gw.alicdn.com/imgextra/i1/92/O1CN01D4sUNi1CYB4JhHgMy_!!92-0-ppp-picassogw.jpg" alt="">
+            </a>
+          </div>
         </li>
         <li>
           <a href="" style="width: 49%">
@@ -48,6 +58,14 @@
             <img src="" alt="">
           </a>
           <a href="" style="width: 32%;">
+            <img src="" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="" style="width: 49%">
+            <img src="" alt="">
+          </a>
+          <a href="" style="width: 49%">
             <img src="" alt="">
           </a>
         </li>
@@ -93,6 +111,12 @@
   }, 1000)
   $('.close').click(function () {
     window.history.back()
+  })
+
+
+  var mySwiper = new Swiper('.swiper-container', {
+    autoplay: true,//可选选项，自动滑动
+    loop : true,
   })
 </script>
 
