@@ -1,0 +1,241 @@
+<!--
+ * @Author: liweilong
+ * @Date: 2020-11-06 09:08:32
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/init.min.css">
+  <link rel="stylesheet" href="./css/location.css">
+  <script src="./js/tool/flexible.js"></script>
+  <script src="./js/tool/jquery.min.js"></script>
+  <script src="./js/tool/art-template.js"></script>
+  <script src="./js/city_arry.min.js"></script>
+
+  <!-- 热门城市 -->
+  <script id="red_city_data" type="text/html">
+    {{ each redCityData }}
+    <li class="rea_li">
+      <a href="">{{ $value }}</a>
+    </li>
+    {{ /each }}
+  </script>
+
+  <!-- 城市 -->
+  <script id="total_data" type="text/html">
+    {{ each totalData prov key }}
+    <div class="pro_name{{key}} pro_name"><a href="">{{prov.name}}</a></div>
+      <ul class="city_data_ul">
+        {{ each prov.cities }}
+        <li class="city_data_li">
+          <a href="">{{ $value }}</a>
+        </li>
+        {{ /each }}
+      </ul>
+    {{ /each }}
+  </script>
+
+  <!-- 搜索 -->
+  <script id="search_data" type="text/html">
+    <div class="pro_name"><a href="">搜索结果</a></div>
+      <ul class="city_data_ul">
+        {{ each searchData }}
+        <li class="city_data_li">
+          <a href="">{{ $value }}</a>
+        </li>
+        {{ /each }}
+      </ul>
+  </script>
+
+  <title>定位</title>
+</head>
+
+<body>
+  <!-- 顶部固定 -->
+  <div class="head_wrap_top">
+    <div class="sear_wrap">
+      <div class="back">
+        <svg t="1604625554589" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          p-id="2873" data-spm-anchor-id="a313x.7781069.0.i3" width="35" height="35">
+          <path
+            d="M648 307.2H217.6l128-128c12.8-12.8 12.8-32 0-44.8-12.8-12.8-32-12.8-44.8 0L118.4 315.2c-6.4 6.4-9.6 14.4-9.6 22.4s3.2 16 9.6 22.4l180.8 180.8c12.8 12.8 32 12.8 44.8 0 12.8-12.8 12.8-32 0-44.8L219.2 371.2H648c120 0 216 96 216 216s-96 216-216 216H320c-17.6 0-32 14.4-32 32s14.4 32 32 32h328c155.2 0 280-124.8 280-280s-124.8-280-280-280z"
+            fill="#000000" p-id="2874"></path>
+        </svg>
+      </div>
+      <!-- 搜索 -->
+      <div class="search_wrap">
+        <input type="text" class="city_input" name="city" placeholder="请输入城市进行搜索">
+        <button type="submit" class="search_btn">
+          <svg t="1602987574996" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            p-id="6984" width="30" height="30">
+            <path
+              d="M894.3872 819.013632 655.1552 576.60928c52.4288-55.12704 72.761344-122.871808 72.761344-205.053952 0-169.146368-130.610176-305.958912-298.596352-305.958912-167.962624 0-304.633856 137.617408-304.633856 306.763776 0 169.147392 134.541312 299.305984 302.50496 299.305984 70.132736 0 136.737792-16.780288 188.269568-57.020416l240.959488 244.130816c4.405248 4.451328 10.180608 6.677504 15.954944 6.677504 5.776384 0 15.337472-6.816768 19.739648-11.266048C900.921344 845.33248 903.1936 827.913216 894.3872 819.013632zM172.831744 368.572416c0-140.362752 113.378304-254.498816 252.724224-254.498816 139.368448 0 252.7488 114.136064 252.7488 254.498816 0 140.316672-113.381376 254.49984-252.7488 254.49984C286.210048 623.072256 172.831744 508.889088 172.831744 368.572416z"
+              p-id="6985" fill="#999999"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="location_wrap">
+      <svg t="1604626287867" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        p-id="3930" width="30" height="30">
+        <path
+          d="M805.055308 165.31325A343.29757 343.29757 0 0 0 524.671069 0h-29.467602a334.38362 334.38362 0 0 0-262.335332 144.096577 348.380731 348.380731 0 0 0-47.074496 303.737313 322.52291 322.52291 0 0 0 22.100702 51.568305l260.640945 498.96018a45.23277 45.23277 0 0 0 41.033637 25.636815 45.23277 45.23277 0 0 0 40.959967-25.710484l270.586261-517.377432a7.366901 7.366901 0 0 0 0.515683-1.105035 327.606072 327.606072 0 0 0-16.575526-314.492989z m-36.318821 288.856175l-259.167564 495.571406L259.830991 471.481641a251.35865 251.35865 0 0 1-17.8279-41.843995 285.320062 285.320062 0 0 1 39.118243-252.021671A275.890429 275.890429 0 0 1 497.266199 58.935205H522.239992a284.583372 284.583372 0 0 1 232.425715 136.729676 269.775902 269.775902 0 0 1 14.07078 258.504544z"
+          fill="#000000" p-id="3931"></path>
+        <path
+          d="M511.778993 218.575942a125.237311 125.237311 0 1 0 125.237311 125.237311 125.237311 125.237311 0 0 0-125.237311-125.237311z m0 191.539417a66.302106 66.302106 0 1 1 66.302106-66.302106 66.302106 66.302106 0 0 1-66.302106 66.302106z"
+          fill="#000000" p-id="3932"></path>
+      </svg>
+      <p>
+        当前定位城市&nbsp;&nbsp;合肥
+      </p>
+    </div>
+  </div>
+  <div class="pro_fiex">
+    <a href="">北京</a>
+  </div>
+
+  <!-- 城市 -->
+  <div class="city_group_wrap">
+    <div class="city_group">
+      <!-- 热门城市 -->
+      <div class="rea_city">
+        <div class="head_name">热门城市</div>
+        <ul class="rea_wrap_ul">
+
+        </ul>
+      </div>
+
+      <!-- 全部城市 -->
+      <div class="total_city">
+        <div class="total_wrap">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  let prov_arry = ['北京',
+    '天津',
+    '河北',
+    '山西',
+    '内蒙古',
+    '辽宁',
+    '吉林',
+    '黑龙江',
+    '上海',
+    '江苏',
+    '浙江',
+    '安徽',
+    '福建',
+    '江西',
+    '山东',
+    '河南',
+    '湖北',
+    '湖南',
+    '广东',
+    '广西',
+    '海南',
+    '重庆',
+    '四川',
+    '贵州',
+    '云南',
+    '西藏',
+    '陕西',
+    '甘肃',
+    '青海',
+    '宁夏',
+    '新疆',
+    '台湾',
+    '香港',
+    '澳门',
+    '海外']
+
+  // 热门城市模板
+  function redCityTemplate() {
+    // 热门城市模板
+    let redCityHtml = template('red_city_data', {
+      redCityData: ['北京', '上海', '广州', '深圳', '成都', '杭州', '南京', '苏州', '重庆', '天津', '武汉', '西安']
+    })
+    $('.rea_wrap_ul').html(redCityHtml)
+  }
+
+  // 全部城市模板
+  function totalTemplate() {
+    // 全部城市
+    let totalHtml = template('total_data', {
+      totalData: total_arry
+    })
+
+    $('.total_wrap').html(totalHtml)
+  }
+
+  // 滚动动态显示当前的省份
+  function provNameDisplay() {
+    let wh = document.body.clientWidth
+    let htop = (wh / 10) * 2
+    let len = prov_arry.length
+    let sub_index = -1
+    $(window).scroll(function () {
+      let scrollTop = $(window).scrollTop() + htop
+      if ($('.pro_name' + 0).position().top > scrollTop) {
+        sub_index = -1
+      }
+      prov_arry.forEach((name, index) => {
+        if ($('.pro_name' + index).position().top < scrollTop) {
+          sub_index = index
+        }
+      })
+      // 判断并且显示相对应的省份
+      if (sub_index > -1) {
+        $('.pro_fiex').show()
+        $('.pro_fiex').find('a').text(prov_arry[sub_index])
+      } else {
+        $('.pro_fiex').hide()
+      }
+
+    })
+  }
+
+  // 搜索地区
+  function searchArea() {
+    $(".city_input").bind("input propertychange", function (event) {
+      let search_text = $(".city_input").val()
+
+      if (search_text.trim()) {
+        let search_arry = area_arry.filter(v => {
+          return v.indexOf(search_text) !== -1
+        })
+        console.log(search_arry);
+        if (search_arry.length > 0) {
+          // 全部城市
+          let searchHtml = template('search_data', {
+            searchData: search_arry
+          })
+          $('.total_wrap').html(searchHtml)
+        }
+      } else {
+        totalTemplate()
+      }
+    });
+  }
+
+  redCityTemplate()
+  totalTemplate()
+  provNameDisplay()
+  searchArea()
+
+  $('.back').click(function() {
+    window.history.back()
+  })
+
+</script>
+
+</html>

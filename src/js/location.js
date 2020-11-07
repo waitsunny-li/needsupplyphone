@@ -22,4 +22,23 @@ class MyLocation {
 
   }
 
+  getLoaction() {
+    let key = this.keyid
+    return new Promise((resolve, reject) => {
+      $.ajax({
+        url: `https://apis.map.qq.com/ws/location/v1/ip?output=jsonp&key=${key}`,
+        dataType: "jsonp",
+        jsonp: "callback",
+        jsonpCallback: 'getLocat',
+        type: 'get',
+        success: function (res) {
+          resolve(res)
+        },
+        error: function (error) {
+          console.log(error);
+        }
+      })
+    })
+  }
+
 }

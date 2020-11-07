@@ -17,7 +17,52 @@
   <script src="./js/tool/jquery.min.js"></script>
   <script src="./js/tool/layer/layer.js"></script>
   <script src="./js/tool/better-scroll.min.js"></script>
+  <script src="./js/tool/art-template.js"></script>
 
+  <script type="text/html" id="goods_detail">
+    <li class="chat_li_mine_img">
+      <div class="avatar_wrap">
+        <div class="ava_img">
+          <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2156833431,1671740038&fm=26&gp=0.jpg"
+            alt="">
+          </div>
+        </div>
+        <div class="chat_content">
+          <div class="chat_inner_content">
+            <a href="goods_detail.html">
+              <div class="img_wrap">
+                <img src="./images/goods4.png" alt="">
+              </div>
+                <div class="title_wrap">
+                  <p class="goods_name">大量可团购小样产品，雅诗兰黛...</p>
+                  <span class="cate" style="
+              background: #1a8eff;">需求</span>
+                </div>
+                <div class="date_wrap" style="-webkit-box-orient: vertical;">
+                  5年（个月）名称：莹粹亮彩水晶唇彩4.6ml包装：无盒有密封产地：比利时进口中国组装9规格小样净含量6（g）生产日期2010保质期
+              </div>
+            </a>
+          </div>
+          </div>
+      </li>
+  </script>
+
+  <!-- 自己发送的消息 -->
+  <script type="text/html" id="mine_send_notice">
+    <li class="chat_li_mine">
+      <div class="avatar_wrap">
+        <div class="ava_img">
+          <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2156833431,1671740038&fm=26&gp=0.jpg"
+            alt="">
+        </div>
+      </div>
+      <div class="chat_content">
+        <div class="chat_inner_content">
+          {{ content }}
+        </div>
+      </div>
+    </li>
+  </script>
   <title>聊聊</title>
 </head>
 
@@ -25,11 +70,11 @@
   <!-- 头部 -->
   <div class="header_wrap">
     <div class="left_arrow">
-      <svg t="1603089060003" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-        p-id="7510" width="35" height="35">
+      <svg t="1604625554589" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        p-id="2873" data-spm-anchor-id="a313x.7781069.0.i3" width="35" height="35">
         <path
-          d="M554.666667 268.8v601.6h-85.333334V268.8L337.066667 401.066667 277.333333 341.333333 512 106.666667 746.666667 341.333333l-59.733334 59.733334L554.666667 268.8z"
-          fill="#ffffff" p-id="7511"></path>
+          d="M648 307.2H217.6l128-128c12.8-12.8 12.8-32 0-44.8-12.8-12.8-32-12.8-44.8 0L118.4 315.2c-6.4 6.4-9.6 14.4-9.6 22.4s3.2 16 9.6 22.4l180.8 180.8c12.8 12.8 32 12.8 44.8 0 12.8-12.8 12.8-32 0-44.8L219.2 371.2H648c120 0 216 96 216 216s-96 216-216 216H320c-17.6 0-32 14.4-32 32s14.4 32 32 32h328c155.2 0 280-124.8 280-280s-124.8-280-280-280z"
+          fill="#ffffff" p-id="2874"></path>
       </svg>
     </div>
 
@@ -51,7 +96,7 @@
       </div>
 
     </div>
-<!-- 
+    <!-- 
     <div class="list_wrap">
       <ul class="list_ul">
         <li class="list_li" style="border:none">
@@ -103,6 +148,8 @@
           </div>
         </div>
       </li>
+
+
     </ul>
   </div>
 
@@ -120,7 +167,7 @@
       </svg>
       <span class="text">图片</span>
     </div>
-    <input hidden class="file_btn" type="file" name="file">
+    <input hidden class="file_btn" type="file" name="file" accept="image/*">
     <div class="submit_btn">
       发送
     </div>
@@ -139,17 +186,53 @@
     // bounce:false,
   })
 
-  // 文字输入
-  $('.text_input').on('input', function () {
-    let val = $(this).val();
-    if (!val.trim()) {
-      $('.uppic').show()
-      $('.submit_btn').hide()
-    } else {
-      $('.uppic').hide()
-      $('.submit_btn').show()
-    }
-  })
+  // 显示页面完成时发送商品详情
+  function autoSendGoodsDeatil(data) {
+    let goodsDetailHtml = template('goods_detail', data)
+    $('.chat_ul').append(goodsDetailHtml)
+    bs.refresh()
+    let endli = returnLis()
+    bs.scrollToElement(endli, 100)
+  }
+
+  // 文字输入是否显示发送按钮
+  function displaySendBtn() {
+    $('.text_input').on('input', function () {
+      let val = $(this).val();
+      if (!val.trim()) {
+        $('.uppic').show()
+        $('.submit_btn').hide()
+      } else {
+        $('.uppic').hide()
+        $('.submit_btn').show()
+      }
+    })
+  }
+
+  // 自己发送的消息
+  function sendMineNotce(data) {
+    let noticeHtml = template('mine_send_notice', data)
+    $('.chat_ul').append(noticeHtml)
+    bs.refresh()
+    let endli = returnLis()
+    bs.scrollToElement(endli, 100)
+  }
+
+  // 检测.chat_ul中有多少个li标签，并返回最后一个li元素
+  function returnLis() {
+    let chatUl = document.querySelector('.chat_ul')
+    let lis = chatUl.querySelectorAll('li')
+    return lis[lis.length - 1]
+  }
+
+
+  /*
+    已下是方法的调用
+  */
+  displaySendBtn()
+  setTimeout(function () {
+    autoSendGoodsDeatil({})
+  }, 1000)
 
   $('.left_arrow').click(function () {
     window.history.back()
@@ -159,6 +242,15 @@
   $('.uppic').click(function () {
     $('.file_btn').click();
   })
+
+  // 监听发送按钮事件
+  $('.submit_btn').click(function () {
+    const content = $('.text_input').val()
+    sendMineNotce({
+      content
+    })
+  })
+
 
   // 举报出现
   // let isShow = false;

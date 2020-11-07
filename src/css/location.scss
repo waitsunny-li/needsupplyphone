@@ -1,0 +1,202 @@
+@import './content.scss';
+
+// 顶部栏
+.head_wrap_top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ececec;
+
+  .sear_wrap {
+    width: 100%;
+    height: 1.066667rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    // 返回
+    .back {
+      svg {
+        width: 0.4rem;
+        height: 0.4rem;
+      }
+    }
+
+    // 搜索
+    .search_wrap {
+      width: 85vw;
+      height: 0.8rem;
+      background: #ececec;
+      box-shadow: 0px 0px 6px 0px rgba(255, 255, 255, 0.383);
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 0.133333rem;
+      box-sizing: border-box;
+      align-items: center;
+
+      input {
+        width: 80%;
+        height: 0.533333rem;
+        padding: 0.133333rem 0.266667rem;
+        border-radius: 20px;
+        box-sizing: border-box;
+        color: #999999;
+        font-size: 0.35rem;
+        line-height: 0.533333rem;
+        border: none;
+        background-color: #ececec;
+      }
+
+      .search_btn {
+        height: 0.4rem;
+
+        svg {
+          width: 0.5rem;
+          height: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .location_wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.266667rem;
+    box-sizing: border-box;
+
+    svg {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+
+    p {
+      margin-left: 0.133333rem;
+      color: #000000;
+      font-size: 0.34rem;
+    }
+  }
+
+}
+
+.pro_fiex {
+  display: none;
+  position: fixed;
+  width: 100%;
+  padding: 0 0.266667rem;
+  box-sizing: border-box;
+  top: 2rem;
+  left: 0;
+  background-color: #ffffff;
+
+  a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0;
+    box-sizing: border-box;
+    color: #8a8686;
+    font-size: 0.363333rem;
+  }
+}
+
+
+// 城市
+.city_group_wrap {
+  width: 100%;
+  margin-top: 2rem;
+  height: calc(100vh - 2rem);
+  padding: 0.266667rem;
+  box-sizing: border-box;
+
+  .city_group {
+    width: 100%;
+
+    // 热门城市
+    .rea_city {
+      width: 100%;
+
+      .head_name {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0.3rem 0;
+        box-sizing: border-box;
+        color: #8a8686;
+        font-size: 0.363333rem;
+      }
+
+      .rea_wrap_ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .rea_li {
+          margin-bottom: 0.2rem;
+          width: 23%;
+          height: 0.63333rem;
+          background-color: #ececec;
+          border-radius: 5px;
+
+          a {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            color: #000000;
+            font-size: 0.353333rem;
+          }
+        }
+      }
+    }
+
+    // 全部城市
+    .total_city {
+      width: 100%;
+
+      .pro_name {
+        width: 100%;
+
+        a {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          padding: 0.3rem 0;
+          box-sizing: border-box;
+          color: #8a8686;
+          font-size: 0.363333rem;
+        }
+      }
+
+
+
+      .city_data_ul {
+        width: 100%;
+
+        .city_data_li {
+          width: 100%;
+          margin-bottom: 0.2rem;
+          height: 0.63333rem;
+          border-bottom: 1px solid #ececec;
+          border-radius: 5px;
+          padding: 0.133333rem 0;
+
+          a {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            color: #000000;
+            font-size: 0.353333rem;
+          }
+        }
+      }
+    }
+  }
+}

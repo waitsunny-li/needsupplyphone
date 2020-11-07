@@ -9,15 +9,48 @@
   z-index: 1000;
   width: 100vw;
   height: 1.666667rem;
+  padding: 0 0.533333rem;
+  box-sizing: border-box;
   background-color: $htmlColor;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  // 定位
+  .location_wrap {
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      
+      svg {
+        width: 0.5rem;
+        height: 0.5rem;
+      }
+
+      .location_text {
+        width: 1.2rem;
+        height: 0.5rem;
+        line-height: 0.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #ffffff;
+        font-size: 0.366667rem;
+      }
+
+      .jiantou {
+        margin-right: 0.2rem;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
   // 搜索
   .search_wrap {
-    width: 90vw;
-    height: 1.033333rem;
+    width: 65vw;
+    // height: 1.033333rem;
+    height: 0.833333rem;
     background: #ffffff;
     box-shadow: 0px 0px 6px 0px rgba(255, 255, 255, 0.383);
     border-radius: 20px;
@@ -29,7 +62,7 @@
 
     input {
       width: 80%;
-      height: 0.833333rem;
+      height: 0.733333rem;
       padding: 0.133333rem 0.266667rem;
       border-radius: 20px;
       box-sizing: border-box;

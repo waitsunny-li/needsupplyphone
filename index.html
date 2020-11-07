@@ -20,7 +20,7 @@
   <script src="./js/message.min.js"></script>
   <script src="./js/tool/funlazy.min.js"></script>
   <script src="./js/tool/art-template.js"></script>
-
+  <script src="./js/location.min.js"></script>
   <script id="tpl_data" type="text/html">
     {{ each goodsLists }}
     <li class="goods_li">
@@ -49,6 +49,29 @@
 <body>
   <!-- 顶部固定 -->
   <div class="head_wrap_top">
+    <!-- 定位 -->
+    <div class="location_wrap">
+      <a href="location.html">
+        <svg t="1604716952658" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          p-id="2783" width="30" height="30">
+          <path
+            d="M512 931.413333c-99.413333 0-331.946667-320.853333-331.946667-497.066666a331.946667 331.946667 0 0 1 663.893334 0c0 165.546667-238.08 497.066667-331.946667 497.066666z m0-758.613333a261.973333 261.973333 0 0 0-261.546667 261.546667c0 155.733333 213.333333 420.266667 261.973334 426.666666 49.92-13.226667 261.12-282.026667 261.12-426.666666A261.973333 261.973333 0 0 0 512 172.8z"
+            p-id="2784" fill="#ffffff"></path>
+          <path
+            d="M512 556.8A130.133333 130.133333 0 1 1 642.133333 426.666667 130.56 130.56 0 0 1 512 556.8z m0-189.866667a59.733333 59.733333 0 1 0 59.733333 59.733334A59.733333 59.733333 0 0 0 512 366.933333z"
+            p-id="2785" fill="#ffffff"></path>
+        </svg>
+        <span class="location_text">
+          <!-- 包河区 -->
+        </span>
+        <svg t="1604716052641" class="icon jiantou" viewBox="0 0 1024 1024" version="1.1"
+          xmlns="http://www.w3.org/2000/svg" p-id="1825" width="30" height="30">
+          <path
+            d="M438.584533 738.132267c14.946133 15.374933 39.2 15.374933 54.1792 0l192.600533-198.250667c14.9376-15.403733 14.9376-40.3744 0-55.746133L492.763733 285.890133c-14.9792-15.403733-39.233067-15.403733-54.1792 0-14.970667 15.3792-14.970667 40.3456 0 55.7504L604.1056 512.0064l-165.521067 170.346667C423.613867 697.7568 423.613867 722.7232 438.584533 738.132267L438.584533 738.132267zM438.584533 738.132267"
+            p-id="1826" fill="#ffffff"></path>
+        </svg>
+      </a>
+    </div>
     <!-- 搜索 -->
     <div class="search_wrap">
       <input type="text" name="name" placeholder="搜索">
@@ -61,7 +84,6 @@
         </svg>
       </button>
     </div>
-
   </div>
   <!-- 供应需求 -->
   <div class="need_supply_wrap">
@@ -462,7 +484,7 @@
     setTimeout(function () {
       // 模板
       let tplHtml = template('tpl_data', {
-        goodsLists: [{},{},{},{},{},{},{},{},{},{}]
+        goodsLists: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
       })
       // 向ul添加HTML字符串
       $('.goods_ul_content').append(tplHtml)
@@ -482,7 +504,7 @@
     bs.scrollTo(0, 0, 500)
   })
 
-  
+
 
   // 图片懒加载
   // $.FunLazy({
@@ -496,4 +518,14 @@
       bs.refresh()
     }
   })
+
+  // 获取地址
+  let ll = new MyLocation()
+  ll.getLoaction({ key: 'NU6BZ-RGSWD-PSV4K-HTQI6-XI4IT-KGFUJ' }).then(res => {
+    let position = res.result
+    let city = position.ad_info.city
+    $('.location_text').text(city)
+  })
+  
+
 </script>

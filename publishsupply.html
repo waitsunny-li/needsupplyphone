@@ -130,8 +130,8 @@
 
   // 获取地址
   let ll = new MyLocation()
-  ll.init().then(position => {
-    // alert(Object.keys(position));
+  ll.getLoaction().then(res => {
+    let position = res.result.ad_info
     if (position.city && position.district !== undefined) {
       let address = position.city + position.district
       $('.address').val(address)
@@ -139,9 +139,5 @@
       let address = position.city
       $('.address').val(address)
     }
-
-
-  }).catch(error => {
-    message.error('自动获取地址出错，请手动输入地址')
   })
 </script>
