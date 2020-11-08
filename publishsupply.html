@@ -130,14 +130,15 @@
 
   // 获取地址
   let ll = new MyLocation()
-  ll.getLoaction().then(res => {
-    let position = res.result.ad_info
-    if (position.city && position.district !== undefined) {
-      let address = position.city + position.district
-      $('.address').val(address)
-    } else {
-      let address = position.city
-      $('.address').val(address)
-    }
+  ll.init(function (res) {
+    let { lat, lng } = res
+    ll.latLngTransAddress({ lat, lng }, function (res) {
+      console.log(res);
+      let { ad_info, address } = res.result
+      let address_city_de = ad_info.city + ad_info.district
+      $('.address').val(address_city_de)
+    })
+  }, function (error) {
+    console.log(error);
   })
 </script>

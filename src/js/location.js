@@ -11,17 +11,15 @@ class MyLocation {
     }
   }
 
-  init() {
+  init(success,error) {
     let self = this;
-
-    return new Promise((resolve, reject) => {
-      let getmylocation = new qq.maps.Geolocation(self.keyid, "myapp");
+    let getmylocation = new qq.maps.Geolocation(self.keyid, "myapp");
       //获取位置信息
-      getmylocation.getLocation(resolve, reject, self.options);
-    })
+      getmylocation.getLocation(success, error, self.options);
 
   }
 
+  // 通过ip地址来获取位置，适合pc端
   getLoaction() {
     let key = this.keyid
     return new Promise((resolve, reject) => {
@@ -38,6 +36,25 @@ class MyLocation {
           console.log(error);
         }
       })
+    })
+  }
+
+  // 通过经纬度转化为详细地址
+  latLngTransAddress({lat, lng, get_poi}, cb) {
+    let key = this.keyid
+    let get_poi_id = get_poi ? get_poi : 0
+    $.ajax({
+      url: `https://apis.map.qq.com/ws/geocoder/v1/?output=jsonp&location=${lat},${lng}&key=${key}&get_poi=${get_poi_id}`,
+      dataType: "jsonp",
+      jsonp: "callback",
+      jsonpCallback: 'getLocat',
+      type: 'get',
+      success: function (res) {
+        cb(res)
+      },
+      error: function (error) {
+        console.log(error);
+      }
     })
   }
 

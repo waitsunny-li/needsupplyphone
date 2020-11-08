@@ -20,6 +20,7 @@
   <script src="./js/message.min.js"></script>
   <script src="./js/tool/funlazy.min.js"></script>
   <script src="./js/tool/art-template.js"></script>
+  <script type="text/javascript" src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
   <script src="./js/location.min.js"></script>
   <script id="tpl_data" type="text/html">
     {{ each goodsLists }}
@@ -521,11 +522,16 @@
 
   // 获取地址
   let ll = new MyLocation()
-  ll.getLoaction({ key: 'NU6BZ-RGSWD-PSV4K-HTQI6-XI4IT-KGFUJ' }).then(res => {
-    let position = res.result
-    let city = position.ad_info.city
-    $('.location_text').text(city)
+
+  ll.init(function (res) {
+    let { lat, lng } = res
+    ll.latLngTransAddress({ lat, lng }, function (res) {
+      console.log(res);
+      let { ad_info, address } = res.result
+      $('.location_text').text(ad_info.city)
+    })
+  }, function (error) {
+    console.log(error);
   })
-  
 
 </script>
