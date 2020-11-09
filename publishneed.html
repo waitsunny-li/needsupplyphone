@@ -134,7 +134,6 @@
   ll.init(function (res) {
     let { lat, lng } = res
     ll.latLngTransAddress({ lat, lng }, function (res) {
-      console.log(res);
       let { ad_info, address } = res.result
       let address_city_de = ad_info.city + ad_info.district
       $('.address').val(address_city_de)

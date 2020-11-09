@@ -526,7 +526,6 @@
   ll.init(function (res) {
     let { lat, lng } = res
     ll.latLngTransAddress({ lat, lng }, function (res) {
-      console.log(res);
       let { ad_info, address } = res.result
       $('.location_text').text(ad_info.city)
     })
